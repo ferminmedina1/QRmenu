@@ -10,12 +10,15 @@
 .menuList{
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .itemMenu img{
     width: 150px;
     border-radius: 4px;
+    margin-top: 20px;
 }
 
 .titlePrice{

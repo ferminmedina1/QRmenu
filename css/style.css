@@ -83,14 +83,18 @@ nav {
     padding-top: 40px;
     padding-bottom: 40px;
     border-bottom: 1px solid white;
-    margin-left: -200%;
     transition: all ease 500ms;
 }
 
-.desplegarNav {
-    margin-left: 0px;
+.navigator {
+    margin-left: -200%;
     transition: all ease 500ms;
 }
+.desplegarNav {
+    margin-left: 0%;
+    transition: all ease 500ms;
+}
+
 
 #btn-menu{
     display: none;

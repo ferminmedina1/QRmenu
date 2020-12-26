@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flex-Store</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/item.css">
+    <link rel="stylesheet" href="././css/item.css">
+    <link rel="stylesheet" href="././css/style.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -17,12 +17,12 @@
         
         <div id="nav-icon">
         <input type="checkbox" id="btn-menu">
-        <label for="btn-menu" id="icon-menu"><img src="../img/icon-menu.png" alt="icon-menu" id="png-menu"></label>
+        <label for="btn-menu" id="icon-menu"><img src="././img/icon-menu.png" alt="icon-menu" id="png-menu"></label>
         </div>
 
-        <nav>
+        <nav class="navigator">
             <div class="menu">
-                <a id="top" class="item">Menu</a>
+                <a id="top" class="item" href="home">Menu</a>
                 <a class="item">example 1</a>
                 <a class="item">example 2</a>
             </div>
@@ -31,15 +31,7 @@
     
     <!-------------CONTENT----------->
     <div id="content">
-        <ul class="menuList">
-            <li class="itemMenu"> 
-                <img src="../img/example.png" alt="img">
-                <div class="titlePrice">
-                    <h1>Titulo de comida</h1>
-                    <h2>$000</h2>
-                </div>
-            </li>
-        </ul>
+        {include file="menu.tpl"}
     </div>
     <!-------------F0OTER----------->
     <footer>
@@ -61,7 +53,6 @@
 
         </article>
     </footer>
-    <script src="../js/nav.js"></script>
-    <script src="../js/partialRender.js"></script>
+    <script src="././js/nav.js"></script>
 </body>
 </html>
