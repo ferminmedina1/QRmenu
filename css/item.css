@@ -1,6 +1,26 @@
 .itemMenu{
+    width: 80%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+    border-bottom: 5px solid rgb(119, 119, 119);
+}
+
+.menuList{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.itemMenu img{
+    width: 150px;
+    border-radius: 4px;
+}
+
+.titlePrice{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
