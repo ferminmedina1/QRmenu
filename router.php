@@ -13,5 +13,10 @@
 
     $r->addRoute("home", "GET", "menuController", "Home");
     
+    //admin
+    $r->addRoute("admin", "GET", "menuController", "Admin");
+    $r->addRoute("admin/items", "GET", "menuController", "AdminItems");
+    $r->addRoute("admin/categorias", "GET", "categoriasController", "AdminCategorias");
+
     //run
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']); 

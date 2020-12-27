@@ -15,22 +15,18 @@
     <!-------------HEADER----------->
     {include file="header.tpl"}
     
-    <!-------------CONTENT----------->
-
-    <ul class="menuList">
-    {assign var=i value=0}
-    {foreach from=$items item=item}
-        <li class="itemMenu"> 
-        <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
-        <div class="titlePrice">
-            <h1>{$item->titulo}</h1>
-            <h2>${$item->precio}</h2>
-        </div>
-        </li>
-    <!--{$i++}--> 
-    {/foreach}
-    </ul>
+    <!-------------CONTENT----------->    
+<div class="administration">
     
+    <h2 class="titleAdmin">ADMINISTRACIÓN</h2>
+    
+    <a href="admin/usuarios" class="option">USUARIOS</a>
+
+    <a href="admin/items" class="option">ITEMS</a>
+
+    <a href='admin/categorias' class="option"> CATEGORIAS </a>
+
+</div>
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 
