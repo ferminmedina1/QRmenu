@@ -1,6 +1,6 @@
 <header>
     <div id="image-title">
-        <h1 class="titleHeader">Example-Store</h1>
+        <h1 class="titleHeader"><a href="home">Example-Store</a></h1>
     </div>
     
     <div id="nav-icon">

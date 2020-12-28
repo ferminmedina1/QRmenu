@@ -14,6 +14,10 @@ class menuModel{
         return $items;
     }
 
+    function insertItem($nombre,$precio,$categoria,$img){
+        $query = $this->db->prepare('INSERT INTO items(titulo,precio,id_categoria,imagen) VALUES (?,?,?,?)');
+        $query->execute([$nombre,$precio,$categoria,$img]);
+    }
 }
 
 ?>

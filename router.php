@@ -20,6 +20,9 @@
     $r->addRoute("admin/categorias", "GET", "categoriasController", "AdminCategorias");
 
 
+    //ACCION ITEMS
+    $r->addRoute("agregarItem", "POST", "menuController", "nuevoItem");
+
     //ACCION CATEGORIAS
     $r->addRoute("agregarCategoria", "POST", "categoriasController", "nuevaCategoria");
     $r->addRoute("eliminarCategoria/:ID", "GET", "categoriasController", "eliminarCategoria");

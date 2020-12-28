@@ -37,7 +37,29 @@ class menuController{
 
     function AdminItems(){
         $categorias = $this->categoriasModel->getCategorias();
-        $this->view->showAdminItem($categorias);
+        $items = $this->model->getItems();
+        $images = [];
+        foreach($items as $item){
+            $img = base64_encode($item->imagen);
+            array_push($images, $img);
+        }
+        $this->view->showAdminItem($categorias,$item,$images);
+    }
+
+    function nuevoItem(){
+        if((!empty($_POST['nombre'])) && (!empty($_POST['precio'])) && (!empty($_POST['categoria']))) {
+
+            if($_FILES['file']['error'] == 0){ //sefija si hubo algun error (si esta vacio es 4).
+            $fileName= $_FILES['file']['name']; //saco los datos de la imagen.
+            $fileTmpName= file_get_contents($_FILES['file']['tmp_name']);
+                if((!empty($fileName))){
+                    $this->model->insertItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'],$fileTmpName);
+                }
+            }else{
+                $this->model->insertItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'],"");
+            }
+        }
+        $this->view->showAdminItemsLocation(); 
     }
 }
 

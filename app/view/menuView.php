@@ -22,13 +22,18 @@ class menuView{
         $this->smarty->display("../templates/admin.tpl");
     }
 
-    function showAdminItem($categories){
+    function showAdminItem($categories,$items,$images){
         $this->smarty->assign('categories', $categories);
+        $this->smarty->assign('items', $items);
+        $this->smarty->assign('images', $images);
         $this->smarty->display("../templates/adminItem.tpl");
     }
 
     function showAdminCategoriasLocation(){
-        header("Location: ".BASE_URL."administracion/categorias");
+        header("Location: ".BASE_URL."admin/categorias");
+    }
+    function showAdminItemsLocation(){
+        header("Location: ".BASE_URL."admin/items");
     }
 }
 
