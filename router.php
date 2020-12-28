@@ -1,6 +1,7 @@
 <?php
 
     require_once("app/controller/menuController.php");
+    require_once("app/controller/categoriasController.php");
     require_once("routerClass.php");
 
     define("BASE_URL", 'http://' .$_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]). '/');
@@ -18,5 +19,13 @@
     $r->addRoute("admin/items", "GET", "menuController", "AdminItems");
     $r->addRoute("admin/categorias", "GET", "categoriasController", "AdminCategorias");
 
+
+    //ACCION CATEGORIAS
+    $r->addRoute("agregarCategoria", "POST", "categoriasController", "nuevaCategoria");
+    $r->addRoute("eliminarCategoria/:ID", "GET", "categoriasController", "eliminarCategoria");
+    $r->addRoute("editarCategoria/:ID", "GET", "categoriasController", "showFormEditarCategoria");
+    $r->addRoute("actualizarCategoria/:ID", "POST", "categoriasController", "editarCategoria");
+    
+    $r->addRoute("categoria/:ID","GET", "categoriasController", "mostrarPorCategoria");
     //run
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']); 

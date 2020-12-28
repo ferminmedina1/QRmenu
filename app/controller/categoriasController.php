@@ -4,7 +4,7 @@
 require_once("./app/model/categoriasModel.php");
 require_once("./app/view/categoriasView.php");
 
-class menuController{
+class categoriasController{
 
     private $model;
     private $view;
@@ -16,6 +16,44 @@ class menuController{
     }
 
     function AdminCategorias(){
-        $this->view->showMenu();
+        $categorias = $this->model->getCategorias();
+        $this->view->showCategorias($categorias);
+    }
+
+    function nuevaCategoria(){
+        if (!empty($_POST['tipo_item'])){
+            $this->model->insertCategoria($_POST['tipo_item']);
+        }
+        $this->view->showAdminCategoriasLocation();
+    }
+
+    function eliminarCategoria($params = null){
+        $categoria_ID = $params[':ID'];
+        $this->model->deleteCategoria($categoria_ID);
+        $this->view->showAdminCategoriasLocation();
+    }
+
+    //MUESTRA EL FORMULARIO EDITAR CATEGORIA
+    function showFormEditarCategoria($params = null){
+        $idCategoria = $params[":ID"];
+        $categoria = $this->model->getCategoriasById($idCategoria);
+        $this->view->showFormularioEditarCategoria($categoria);
+    }
+
+    //MUESTRA EL FORMULARIO EDITAR CATEGORIA
+    function editarCategoria($params = null){
+        $categoria_ID = $params[':ID']; 
+        if((!empty($_POST['nombre']))) {
+            $this->model->updateCategoria($_POST['nombre'], $categoria_ID);
+        }
+        $this->view->showAdminCategoriasLocation();
+    }
+
+     //MUESTRA LAS VIANDAS ASOCIADAS A UNA CATEGORIA
+     function mostrarPorCategoria($params = null) {
+        $id = $params[":ID"];
+        $categoria = $this->model->getCategoriasById($id);
+        $items = $this->model->getItemByCategorieId($id);
+        $this->view->showItemsByCategorie($categoria, $items);
     }
 }

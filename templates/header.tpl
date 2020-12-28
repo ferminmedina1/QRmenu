@@ -11,8 +11,9 @@
     <nav class="navigator">
         <div class="menu">
             <a id="top" class="item" href="home">Menu</a>
-            <a class="item">example 1</a>
-            <a class="item">example 2</a>
+            {foreach from=$categories item=categorie}
+            <a class="item" href="categoria/{$categorie->id_categoria}">{$categorie->nombre}</a>
+            {/foreach}
         </div>
     </nav>
 </header>

@@ -27,7 +27,8 @@ class menuController{
             $img = base64_encode($item->imagen);
             array_push($images, $img);
         }
-        $this->view->showMenu($items,$images);
+        $categorias = $this->categoriasModel->getCategorias();
+        $this->view->showMenu($items,$images,$categorias);
     }
 
     function Admin(){

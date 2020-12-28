@@ -16,14 +16,12 @@
     {include file="header.tpl"}
     
     <!-------------CONTENT----------->
-    {foreach from=$categories item=categorie}
+    <h1>{$categoria->nombre}</h1>
     
         <ul class="menuList">
-            <h1>{$categorie->nombre}</h1>
         {assign var=i value=0}
 
         {foreach from=$items item=item}
-        {if $categorie->id_categoria eq $item->id_categoria}
             <li class="itemMenu"> 
             <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
             <div class="titlePrice">
@@ -32,10 +30,8 @@
             </div>
             </li>
         <!--{$i++}--> 
-        {/if}
         {/foreach}
         </ul>
-    {/foreach}
     
     <!-------------F0OTER----------->
     {include file="footer.tpl"}

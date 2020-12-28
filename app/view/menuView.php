@@ -11,9 +11,10 @@ class menuView{
         $this->smarty->assign('base_url',BASE_URL);
     }
 
-    function showMenu($items,$images){
+    function showMenu($items,$images,$categories){
         $this->smarty->assign('items', $items);
         $this->smarty->assign('images', $images);
+        $this->smarty->assign('categories', $categories);
         $this->smarty->display("../templates/menu.tpl");
     }
 
@@ -24,6 +25,10 @@ class menuView{
     function showAdminItem($categories){
         $this->smarty->assign('categories', $categories);
         $this->smarty->display("../templates/adminItem.tpl");
+    }
+
+    function showAdminCategoriasLocation(){
+        header("Location: ".BASE_URL."administracion/categorias");
     }
 }
 

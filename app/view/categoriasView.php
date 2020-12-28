@@ -11,9 +11,24 @@ class categoriasView{
         $this->smarty->assign('base_url',BASE_URL);
     }
 
-    function showCategorias($key){
-        $this->smarty->assign('key', $key);
-        $this->smarty->display("../templates/index.tpl");
+    function showCategorias($categories){
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->display("../templates/adminCategorias.tpl");
+    }
+
+    function showAdminCategoriasLocation(){
+        header("Location: ".BASE_URL."admin/categorias");
+    }
+
+    function showFormularioEditarCategoria($categoria){
+        $this->smarty -> assign('categoria', $categoria);
+        $this->smarty->display('../templates/editCategorie.tpl');
+    }
+
+     function showItemsByCategorie ($categoria, $items) {
+        $this->smarty -> assign('categoria', $categoria);
+        $this->smarty -> assign('items', $items);
+        $this->smarty->display('../templates/itemsByCategorie.tpl');
     }
 }
 
