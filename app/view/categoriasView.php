@@ -25,7 +25,10 @@ class categoriasView{
         $this->smarty->display('../templates/editCategorie.tpl');
     }
 
-     function showItemsByCategorie ($categoria, $items) {
+     function showItemsByCategorie ($categoria, $items,$categorias,$img) {
+        $this->smarty->assign('items', $items);
+        $this->smarty->assign('images', $img);
+        $this->smarty->assign('categories', $categorias);
         $this->smarty -> assign('categoria', $categoria);
         $this->smarty -> assign('items', $items);
         $this->smarty->display('../templates/itemsByCategorie.tpl');

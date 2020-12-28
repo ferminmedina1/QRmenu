@@ -52,8 +52,14 @@ class categoriasController{
      //MUESTRA LAS VIANDAS ASOCIADAS A UNA CATEGORIA
      function mostrarPorCategoria($params = null) {
         $id = $params[":ID"];
+        $categorias = $this->model->getCategorias();
         $categoria = $this->model->getCategoriasById($id);
         $items = $this->model->getItemByCategorieId($id);
-        $this->view->showItemsByCategorie($categoria, $items);
+        $images = [];
+        foreach($items as $item){
+            $img = base64_encode($item->imagen);
+            array_push($images, $img);
+        }
+        $this->view->showItemsByCategorie($categoria, $items,$categorias,$images);
     }
 }
