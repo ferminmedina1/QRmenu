@@ -16,11 +16,10 @@
     {include file="header.tpl"}
     
     <!-------------CONTENT----------->
+    {assign var=i value=0}
     {foreach from=$categories item=categorie}
-    
         <ul class="menuList">
             <h1>{$categorie->nombre}</h1>
-        {assign var=i value=0}
 
         {foreach from=$items item=item}
         {if $categorie->id_categoria eq $item->id_categoria}

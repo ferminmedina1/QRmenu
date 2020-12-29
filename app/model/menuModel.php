@@ -8,7 +8,7 @@ class menuModel{
     }
 
     function getItems(){
-        $query = $this->db->prepare('SELECT * FROM items');
+        $query = $this->db->prepare('SELECT * FROM items INNER JOIN categorias WHERE items.id_categoria=categorias.id_categoria');
         $query->execute();
         $items = $query->fetchAll(PDO::FETCH_OBJ);
         return $items;

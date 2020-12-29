@@ -42,22 +42,21 @@
 
     </div>
         
-    <!--<table>
+    <table>
         <thead>
             <tr>
-                <th>Item</th><th>Precio</th><th>Tipo</th><th>Borrar/Editar</th>
+                <th>Item</th><th>Precio</th><th>Categoria</th><th>Borrar/Editar</th>
             </tr>
         </thead>
         <tbody id="itemsTable">
 
             {foreach from=$items item=item}
-            {$items->nombre}
-                <tr><td>{$item->titulo}</td><td>{$item->precio}</td><td>{$item->tipo_item}</td>
+                <tr><td>{$item->titulo}</td><td>{$item->precio}</td><td>{$item->nombre}</td>
                 <td class="botonBorrar"> <a href='eliminarItem/{$item->id_item}'><button class="botonBorrarTD" id="{$item->id_item}"><i class="fa fa-trash-o"></i></button></a>
                 <a href='editarItem/{$item->id_item}' ><button class="botonEditarTD" id="{$item->id_item}"><i class="fa fa-edit"></i></button></a></td></tr>
             {/foreach}
         </tbody>
-    </table>-->
+    </table>
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 

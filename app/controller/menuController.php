@@ -43,7 +43,7 @@ class menuController{
             $img = base64_encode($item->imagen);
             array_push($images, $img);
         }
-        $this->view->showAdminItem($categorias,$item,$images);
+        $this->view->showAdminItem($categorias,$items,$images);
     }
 
     function nuevoItem(){
