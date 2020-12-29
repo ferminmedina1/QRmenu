@@ -29,11 +29,11 @@
                 <label class="itemformulario"> Nombre: </label> <input type="text" name="nombre" placeholder="Anteriormente era: {$item->titulo}">
                 <label class="itemformulario"> Precio: </label> <input type="number" name="precio"  REQUIRED value={$item->precio}>
                 <label class="itemformulario"> Tipo de vianda: (Anteriormente era de la categoria: {$item->nombre})</label> 
-                    <select name="dirigidoA" id="select">
-                        {foreach from=$categories item=categoria}
-                            <option value="{$categoria->id_categoria}">{$categoria->nombre}</option>
-                        {/foreach}
-                    </select>            
+                <select name="dirigidoA" id="select">
+                    {foreach from=$categories item=categoria}
+                        <option value="{$categoria->id_categoria}">{$categoria->nombre}</option>
+                    {/foreach}
+                </select>            
                 <label class="textoInput"> Nueva Imagen: <input type="file" name="file"/></label>
 
                 <button type="submit" id="botonEnviar">Actualizar!</button>

@@ -25,11 +25,10 @@
                 <label class="textoInput"> Nombre: <input type="text" REQUIRED name="nombre" id="producto"> </label>
                 <label class="textoInput"> Precio:  <input type="number" REQUIRED name="precio" id="precio"> </label>
                 <label class="textoInput"> Imagen: <input type="file" name="file"/></label>
-
             </div>
         
             <div class="tipoDeCategoria">
-
+                Categoria:
                 <select name="categoria" id="select">
                     {foreach from=$categories item=categoria}
                         <option value="{$categoria->id_categoria}">{$categoria->nombre}</option>

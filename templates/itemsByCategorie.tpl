@@ -23,7 +23,9 @@
 
         {foreach from=$items item=item}
             <li class="itemMenu"> 
+            {if ($images[$i] != '')} 
             <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
+            {/if}
             <div class="titlePrice">
                 <h1>{$item->titulo}</h1>
                 <h2>${$item->precio}</h2>
