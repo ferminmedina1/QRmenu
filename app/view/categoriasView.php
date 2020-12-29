@@ -16,10 +16,6 @@ class categoriasView{
         $this->smarty->display("../templates/adminCategorias.tpl");
     }
 
-    function showAdminCategoriasLocation(){
-        header("Location: ".BASE_URL."admin/categorias");
-    }
-
     function showFormularioEditarCategoria($categoria){
         $this->smarty -> assign('categoria', $categoria);
         $this->smarty->display('../templates/editCategorie.tpl');
@@ -32,6 +28,10 @@ class categoriasView{
         $this->smarty -> assign('categoria', $categoria);
         $this->smarty -> assign('items', $items);
         $this->smarty->display('../templates/itemsByCategorie.tpl');
+    }
+
+    function showAdminCategoriasLocation(){
+        header("Location: ".BASE_URL."admin/categorias");
     }
 }
 

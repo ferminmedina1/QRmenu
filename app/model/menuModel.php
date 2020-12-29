@@ -18,6 +18,18 @@ class menuModel{
         $query = $this->db->prepare('INSERT INTO items(titulo,precio,id_categoria,imagen) VALUES (?,?,?,?)');
         $query->execute([$nombre,$precio,$categoria,$img]);
     }
+
+    function deleteItem($id) {      
+        $sentencia = $this->db->prepare("DELETE FROM items WHERE id_item=?");
+        $sentencia->execute(array($id));
+    }
+
+    function getItemById($id){ 
+        $query = $this->db->prepare('SELECT * FROM items INNER JOIN categorias ON items.id_categoria=categorias.id_categoria WHERE id_item = ?');
+        $query->execute([$id]);
+        $item = $query->fetch(PDO::FETCH_OBJ);
+        return $item;
+    }
 }
 
 ?>

@@ -146,6 +146,7 @@ footer{
 
 .itemFooter{
     color: white;
+    text-decoration: none;
     padding-right: 10px;
     padding-left: 10px;
     border-right: 2px solid rgb(148, 148, 148);

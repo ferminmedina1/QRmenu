@@ -9,10 +9,9 @@
             </section>
 
             <section class="links">
-                <a class="itemFooter" id="home">Home</a>
-                <a class="itemFooter" id="beats">Beats</a>
+                <a class="itemFooter" id="home" href="menu">Menu</a>
                 <a class="itemFooter" id="admin" href="admin">Admin</a>
-                <a class="itemFooter" id="about">About Flex-Store</a>
+                <a class="itemFooter" id="about">Redes</a>
             </section>
 
         </article>

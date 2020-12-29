@@ -61,5 +61,18 @@ class menuController{
         }
         $this->view->showAdminItemsLocation(); 
     }
+
+    function eliminarItem($params = null){
+        $id = $params[':ID'];
+        $this->model->deleteItem($id);
+        $this->view->showAdminItemsLocation();
+    }
+
+    function showFormEditarItem($params = null){
+        $id = $params[":ID"];
+        $item = $this->model->getItemById($id);
+        $categorias = $this->categoriasModel->getCategorias();
+        $this->view->showFormularioEditar($item,$categorias);
+    }
 }
 

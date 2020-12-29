@@ -52,7 +52,7 @@
 
             {foreach from=$items item=item}
                 <tr><td>{$item->titulo}</td><td>{$item->precio}</td><td>{$item->nombre}</td>
-                <td class="botonBorrar"> <a href='eliminarItem/{$item->id_item}'><button class="botonBorrarTD" id="{$item->id_item}"><i class="fa fa-trash-o"></i></button></a>
+                <td class="botonBorrar"> <a href='eliminarItem/{$item->id_item}'><button class="botonBorrarTD" id="{$item->id_item}"><i class="fa fa-trash"></i></button></a>
                 <a href='editarItem/{$item->id_item}' ><button class="botonEditarTD" id="{$item->id_item}"><i class="fa fa-edit"></i></button></a></td></tr>
             {/foreach}
         </tbody>

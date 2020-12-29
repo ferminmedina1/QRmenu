@@ -29,11 +29,14 @@ class menuView{
         $this->smarty->display("../templates/adminItem.tpl");
     }
 
-    function showAdminCategoriasLocation(){
-        header("Location: ".BASE_URL."admin/categorias");
-    }
     function showAdminItemsLocation(){
         header("Location: ".BASE_URL."admin/items");
+    }
+
+    function showFormularioEditar($item,$categorias){
+        $this->smarty -> assign('categories', $categorias);
+        $this->smarty -> assign('item', $item);
+        $this->smarty->display('../templates/editItem.tpl');
     }
 }
 
