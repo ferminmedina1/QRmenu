@@ -32,7 +32,8 @@ class menuController{
     }
 
     function Admin(){
-        $this->view->showAdmin();
+        $categorias = $this->categoriasModel->getCategorias();
+        $this->view->showAdmin($categorias);
     }
 
     function AdminItems(){

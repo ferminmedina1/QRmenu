@@ -18,7 +18,8 @@ class menuView{
         $this->smarty->display("../templates/menu.tpl");
     }
 
-    function showAdmin(){
+    function showAdmin($categories){
+        $this->smarty->assign('categories', $categories);
         $this->smarty->display("../templates/admin.tpl");
     }
 

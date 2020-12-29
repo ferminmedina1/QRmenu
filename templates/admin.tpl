@@ -20,7 +20,7 @@
     
     <h2 class="titleAdmin">ADMINISTRACIÓN</h2>
     
-    <a href="admin/usuarios" class="option">USUARIOS</a>
+    <a href="menu" class="option">USUARIOS</a>
 
     <a href="admin/items" class="option">ITEMS</a>
 
