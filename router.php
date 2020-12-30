@@ -24,6 +24,7 @@
     $r->addRoute("agregarItem", "POST", "menuController", "nuevoItem");
     $r->addRoute("eliminarItem/:ID", "GET", "menuController", "eliminarItem");
     $r->addRoute("editarItem/:ID", "GET", "menuController", "showFormEditarItem");
+    $r->addRoute("actualizarItem/:ID", "POST", "menuController", "editarItem");
 
 
     //ACCION CATEGORIAS

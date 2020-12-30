@@ -24,12 +24,12 @@
 
         <section class="contenedorform">
              
-            <form class="formulario" method="post" action="actualizarCategoria/{$item->id_categoria}">
+            <form class="formulario" method="post" action="actualizarItem/{$item->id_item}" enctype="multipart/form-data">
                 <h1 class="subtitulo"> EDITA LA CATEGORIA:  {$item->titulo}</h1>
                 <label class="itemformulario"> Nombre: </label> <input type="text" name="nombre" placeholder="Anteriormente era: {$item->titulo}">
                 <label class="itemformulario"> Precio: </label> <input type="number" name="precio"  REQUIRED value={$item->precio}>
-                <label class="itemformulario"> Tipo de vianda: (Anteriormente era de la categoria: {$item->nombre})</label> 
-                <select name="dirigidoA" id="select">
+                <label class="itemformulario"> Categoria: (Anteriormente era de la categoria: {$item->nombre})</label> 
+                <select name="categoria" id="select">
                     {foreach from=$categories item=categoria}
                         <option value="{$categoria->id_categoria}">{$categoria->nombre}</option>
                     {/foreach}
@@ -45,7 +45,7 @@
     </article>
 
         <section class="section-consultas">
-            <a class="botonAdministrar" href="admin/categorias"> Volver a administrar</a>
+            <a class="botonAdministrar" href="admin/items"> Volver a administrar</a>
         </section>
 
  <!-- FOOTER -->

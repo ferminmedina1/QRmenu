@@ -75,5 +75,24 @@ class menuController{
         $categorias = $this->categoriasModel->getCategorias();
         $this->view->showFormularioEditar($item,$categorias);
     }
+
+    function editarItem($params = null){
+        $id = $params[':ID'];
+
+        if((!empty($_POST['nombre'])) && (!empty($_POST['precio'])) && (!empty($_POST['categoria']))) {
+
+            if($_FILES['file']['error'] == 0){ //sefija si hubo algun error (si esta vacio es 4).
+                $fileName= $_FILES['file']['name']; //saco los datos de la imagen.
+                $fileTmpName= file_get_contents($_FILES['file']['tmp_name']);
+                    if((!empty($fileName))){
+                        $this->model->updateItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'], $id, $fileTmpName);
+                    }
+                }else{
+                    $this->model->updateItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'], $id, '');
+                }
+        }
+        $this->view->showAdminItemsLocation();   
+    }
+
 }
 

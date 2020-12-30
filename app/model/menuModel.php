@@ -30,6 +30,11 @@ class menuModel{
         $item = $query->fetch(PDO::FETCH_OBJ);
         return $item;
     }
+
+    function updateItem($nombre,$precio,$categoria,$id,$img){
+        $query = $this->db->prepare("UPDATE items SET titulo=?, precio=?, imagen=?, id_categoria=? WHERE id_item = ?");
+        $query->execute(array($nombre,$precio,$img ,$categoria,$id));
+    }
 }
 
 ?>
