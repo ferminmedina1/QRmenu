@@ -59,3 +59,8 @@
     color: rgb(26, 26, 26);
     transition: all ease 500ms;
 }
+
+
+#userFormulario{
+    width: 50px;
+}

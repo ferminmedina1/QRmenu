@@ -4,6 +4,7 @@ require_once("./app/model/menuModel.php");
 require_once("./app/view/menuView.php");
 require_once("./app/model/categoriasModel.php");
 require_once("./app/view/categoriasView.php");
+require_once ("./app/helper/userHelper.php");
 
 class menuController{
 
@@ -11,6 +12,7 @@ class menuController{
     private $view;
     private $categoriasModel;
     private $categoriasView;
+    private $helper;
     
     function __construct()
     {
@@ -18,6 +20,7 @@ class menuController{
         $this->view = new menuView();
         $this->categoriasModel = new categoriasModel();
         $this->categoriasView = new categoriasView();
+        $this->helper = new userHelper();
     }
 
     function Home(){
@@ -32,8 +35,15 @@ class menuController{
     }
 
     function Admin(){
+        $admin = $this->helper->checkIsAdmin();
+
+        if ($admin == True){ 
         $categorias = $this->categoriasModel->getCategorias();
         $this->view->showAdmin($categorias);
+        }
+        else{
+            header("Location: ".LOGIN);
+        }
     }
 
     function AdminItems(){
@@ -93,6 +103,5 @@ class menuController{
         }
         $this->view->showAdminItemsLocation();   
     }
-
 }
 

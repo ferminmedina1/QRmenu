@@ -20,6 +20,12 @@
     $r->addRoute("admin/items", "GET", "menuController", "AdminItems");
     $r->addRoute("admin/categorias", "GET", "categoriasController", "AdminCategorias");
 
+    //LOGIN CONFIGS.
+    $r->addRoute("login", "GET", "userController", "goToLog");
+    $r->addRoute("verifyUser", "POST", "userController", "VerifyUser");
+    $r->addRoute("addAdmin", "POST", "userController", "addAdmin");
+     
+    $r->addRoute("register", "GET", "userController", "goToRegister");
 
     //ACCION ITEMS
     $r->addRoute("agregarItem", "POST", "menuController", "nuevoItem");
@@ -34,12 +40,10 @@
     $r->addRoute("editarCategoria/:ID", "GET", "categoriasController", "showFormEditarCategoria");
     $r->addRoute("actualizarCategoria/:ID", "POST", "categoriasController", "editarCategoria");
 
-    
+
     $r->addRoute("categoria/:ID","GET", "categoriasController", "mostrarPorCategoria");
 
 
-    //LOGIN CONFIGS.
-    $r->addRoute("login", "GET", "userController", "goToLog");
 
     //run
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']); 

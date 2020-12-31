@@ -3,16 +3,20 @@
 
 require_once("./app/model/categoriasModel.php");
 require_once("./app/view/categoriasView.php");
+require_once ("./app/helper/userHelper.php");
 
 class categoriasController{
 
     private $model;
     private $view;
+    private $helper;
+    
     
     function __construct()
     {
         $this->model = new categoriasModel();
         $this->view = new categoriasView();
+        $this->helper = new userHelper();
     }
 
     function AdminCategorias(){

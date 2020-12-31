@@ -22,17 +22,20 @@
     
     <section class="contenedorform">
 
-        <form class="formulario" action="verifyUser" method="post">
-            <h1 class="subtitulo"> Logueate! <img src="./img/user.png" alt="user" id="userFormulario"></h1>
+        <form class="formulario" action="addAdmin" method="post">
+            <h1 class="subtitulo"> REGISTRATE! <img src="./img/user.png" alt="user" id="userFormulario"></h1>
             
-            <label class="itemformulario"> Usuario: </label> <input type="text" name="input_user" required>
-            <label class="itemformulario"> Contraseña: </label> <input type="password" id="pass" name="input_pass" required>
+            <label class="itemformulario"> Usuario: </label> <input type="text" name="user" required>
+            <label class="itemformulario"> E-mail: </label> <input type="email" name="mail" required>
+            <label class="itemformulario"> Contraseña: </label> <input type="password" id="pass" name="pass" required>
             <p id="avisoCaptcha">{$mensaje}</p>
-            <button type="submit" id="botonEnviar" class="option">ENTRAR</button>
+            <button type="submit" id="botonEnviar">ENVIAR</button>
 
         </form>
 
     </section>
+
+    <a href='register' class="option2"> REGISTRAR </a>
 </div>
     <!-------------F0OTER----------->
     {include file="footer.tpl"}

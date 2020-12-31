@@ -13,8 +13,16 @@ class userView{
     }
 
      //MUESTRA EL FORMULARIO DE LOGIN
-     function ShowLog($mensaje = ""){
+     function ShowLog($categories, $mensaje = ""){
+        $this->smarty->assign('categories', $categories);
         $this->smarty->assign('mensaje', $mensaje);
         $this->smarty->display('../templates/login.tpl');
     }
+
+    function ShowRegister($categories,$mensaje = ""){
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->assign('mensaje', $mensaje);
+        $this->smarty->display('../templates/register.tpl');
+    }
+    
 }
