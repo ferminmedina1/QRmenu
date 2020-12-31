@@ -10,11 +10,9 @@
 
             <section class="links">
                 <a class="itemFooter" id="home" href="menu">Menu</a>
-                {if (isset($smarty.session.user))}
-                    <a class="itemFooter" id="admin" href="login">Admin</a>
-                {else}
-                    <a class="itemFooter" id="admin" href="admin">Admin</a>
-                {/if}
+    
+                <a class="itemFooter" id="admin" href="admin">Admin</a>
+  
                 <a class="itemFooter" id="about">Redes</a>
             </section>
 
