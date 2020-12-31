@@ -60,7 +60,34 @@
     transition: all ease 500ms;
 }
 
+.option3{
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(199, 33, 33);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 1000;
+    color: white;
+    width: 50%;
+    text-align: center;
+    border-radius: 5px;
+    border-top: 10px solid rgb(224, 82, 82);
+    border-left: 10px solid rgb(224, 82, 82);
+    border-right: 10px solid rgb(156, 23, 23);
+    border-bottom: 10px solid rgb(156, 23, 23);
+    color: rgb(26, 26, 26);
+    transition: all ease 500ms;
+}
+
+
 
 #userFormulario{
     width: 50px;
+}
+
+.user{
+    color: black;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 1000;
 }

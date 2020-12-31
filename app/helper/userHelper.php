@@ -4,24 +4,26 @@ require_once ("./app/view/userView.php");
 require_once ("./app/model/userModel.php");
 
 class userHelper{
-    private $view;
-    private $model;
 
-    function __construct()
-    {
-        $this->view = new userView;
-        $this->model = new userModel;
-        $this->categoriasModel = new categoriasModel();
+
+    function __construct() {
+
+    }
+
+    function checkUserSession() {
+        $this->startSessionFixed();
+        if (isset($_SESSION['user'])) {
+            return true;
+        }else{
+            header("Location: ".LOGIN);
+            return false;
+        }
+    }
+
+    function startSessionFixed() {
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
+        }
     }
     
-
-    function checkIsAdmin(){
-        if((isset($_SESSION["ROL"])) && ($_SESSION["ROL"] == 1)){
-            $admin = True;
-        }
-        else{
-            $admin = False;
-        }
-        return $admin;
-    }
 }

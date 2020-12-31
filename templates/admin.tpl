@@ -16,8 +16,9 @@
     {include file="header.tpl"}
     
     <!-------------CONTENT----------->    
+<a class="user">{$smarty.session.user}</a>
+
 <div class="administration">
-    
     <h2 class="titleAdmin">ADMINISTRACIÓN</h2>
     
     <a href="menu" class="option">USUARIOS</a>
@@ -27,6 +28,8 @@
     <a href='admin/categorias' class="option"> CATEGORIAS </a>
 
     <a href='home' class="option2"> VOLVER </a>
+
+    <a href='logout' class="option3"> CERRAR SESIÓN </a>
 
 </div>
     <!-------------F0OTER----------->

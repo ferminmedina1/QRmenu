@@ -23,8 +23,9 @@
     //LOGIN CONFIGS.
     $r->addRoute("login", "GET", "userController", "goToLog");
     $r->addRoute("verifyUser", "POST", "userController", "VerifyUser");
-    $r->addRoute("addAdmin", "POST", "userController", "addAdmin");
-     
+    $r->addRoute("logout", "GET", "userController", "logout");
+
+    $r->addRoute("addAdmin", "POST", "userController", "addAdmin"); 
     $r->addRoute("register", "GET", "userController", "goToRegister");
 
     //ACCION ITEMS

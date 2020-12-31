@@ -38,12 +38,13 @@ class userController{
             if(isset($userFromDB) && $userFromDB){
                     
                 if (password_verify($pass, $userFromDB->password)){ 
+                    
                     session_start();    //SE INICIA UNA SESION
                     $_SESSION["user"] = $userFromDB->user;    //SE TRAE EL user DEL USUARIO DESDE LA DB
                     $_SESSION["id_user"] = $userFromDB->id_user;
-                    $_SESSION["admin"] = $userFromDB->admin;
+                    $_SESSION["mail"] = $userFromDB->mail;
                     setcookie("id_user", $userFromDB->id_user); //SE CREA UNA COOKIE "id_user"
-
+                    
                     header("Location: ".BASE_URL."admin");
                     echo($_COOKIE["id_user"]);
                 }
@@ -58,43 +59,57 @@ class userController{
         }
     }
 
+    function logout(){
+        session_start();
+        session_destroy();
+        if ( isset($_COOKIE['id_user']))        //SI ESTA SETEADA LA VARIABLE 
+        setcookie("id_user", "", time() - 1 );  //SE ELIMINA
+        header("Location: ".BASE_URL);
+    }
+
      //AGREGA UN USUARIO NUEVO
      function addAdmin(){
+        $logued = $this->helper->checkUserSession();
+        
+        if ($logued == True){
+            $user = $_POST["user"];
+            $pass_input = $_POST["pass"];
+            $mail = $_POST["mail"];
 
-        $user = $_POST["user"];
-        $pass_input = $_POST["pass"];
-        $mail = $_POST["mail"];
+            $hash = password_hash($pass_input, PASSWORD_DEFAULT);
 
-        $hash = password_hash($pass_input, PASSWORD_DEFAULT);
+            $categorias = $this->categoriasModel->getCategorias();
 
-        $categorias = $this->categoriasModel->getCategorias();
+            //SE VERIFICA QUE LOS CAMPOS NO ESTEN VACIOS
+            if((isset($_POST["user"]) && !empty($_POST["user"])) && (isset($_POST["pass"]) && !empty($_POST["pass"])) && (isset($_POST["mail"]) && !empty($_POST["mail"]))){
 
-        //SE VERIFICA QUE LOS CAMPOS NO ESTEN VACIOS
-        if((isset($_POST["user"]) && !empty($_POST["user"])) && (isset($_POST["pass"]) && !empty($_POST["pass"])) && (isset($_POST["mail"]) && !empty($_POST["mail"]))){
+                $existe = $this->verificarUsuario($user, $mail);  
+            //SI EL USER NO EXISTE LO AGREGA A LA DB
+                if ($existe == False) {        
+                    $this->model->addUserDB($user,$hash,$mail);
+                    
 
-            $existe = $this->verificarUsuario($user, $mail);  
-        //SI EL USER NO EXISTE LO AGREGA A LA DB
-            if ($existe == False) {        
-                $this->model->addUserDB($user,$hash,$mail);
-                
-
-                $userFromDB = $this->model->GetUser($user,$mail);
-                session_start();    //SE INICIA UNA SESION
-                $_SESSION["user"] = $userFromDB->user;    //SE TRAE EL user DEL USUARIO DESDE LA DB
-                $_SESSION["ROL"] = $userFromDB->rol;    //SE TRAE EL ROL DEL USUARIO DESDE LA DB
-                $_SESSION["id_user"] = $userFromDB->id_user;
-                setcookie("id_user", $userFromDB->id_user); //SE CREA UNA COOKIE "id_user"
-                
-                header("Location: ".BASE_URL."home");
-                echo($_COOKIE["id_user"]);
+                    $userFromDB = $this->model->GetUser($user,$mail);
+                    session_start();    //SE INICIA UNA SESION
+                    $_SESSION["user"] = $userFromDB->user;    //SE TRAE EL user DEL USUARIO DESDE LA DB
+                    $_SESSION["ROL"] = $userFromDB->rol;    //SE TRAE EL ROL DEL USUARIO DESDE LA DB
+                    $_SESSION["id_user"] = $userFromDB->id_user;
+                    setcookie("id_user", $userFromDB->id_user); //SE CREA UNA COOKIE "id_user"
+                    
+                    header("Location: ".BASE_URL."home");
+                    echo($_COOKIE["id_user"]);
+                }
+                else{
+                    $this->view->showRegister($categorias, "Usuario ya registrado");   
+                }      
             }
             else{
-                $this->view->showRegister($categorias, "Usuario ya registrado");   
-            }      
+                $this->view->showRegister($categorias, "Ingresa los datos correspondientes");  
+            }
         }
         else{
-            $this->view->showRegister($categorias, "Ingresa los datos correspondientes");  
-        }
+            header("Location: ".LOGIN);
+        } 
     }
 
     function verificarUsuario($usuario){     

@@ -20,37 +20,72 @@ class categoriasController{
     }
 
     function AdminCategorias(){
+        $logued = $this->helper->checkUserSession();
+        
+        if ($logued == True){ 
         $categorias = $this->model->getCategorias();
         $this->view->showCategorias($categorias);
+        }
+        else{
+            header("Location: ".LOGIN);
+        }
     }
 
     function nuevaCategoria(){
-        if (!empty($_POST['tipo_item'])){
-            $this->model->insertCategoria($_POST['tipo_item']);
+        $logued = $this->helper->checkUserSession();
+        
+        if ($logued == True){ 
+            if (!empty($_POST['tipo_item'])){
+                $this->model->insertCategoria($_POST['tipo_item']);
+            }
+            $this->view->showAdminCategoriasLocation();
         }
-        $this->view->showAdminCategoriasLocation();
+        else{
+            header("Location: ".LOGIN);
+        }
     }
 
     function eliminarCategoria($params = null){
-        $categoria_ID = $params[':ID'];
-        $this->model->deleteCategoria($categoria_ID);
-        $this->view->showAdminCategoriasLocation();
+        $logued = $this->helper->checkUserSession();
+        
+        if ($logued == True){ 
+            $categoria_ID = $params[':ID'];
+            $this->model->deleteCategoria($categoria_ID);
+            $this->view->showAdminCategoriasLocation();
+        }
+        else{
+            header("Location: ".LOGIN);
+        }
     }
 
     //MUESTRA EL FORMULARIO EDITAR CATEGORIA
     function showFormEditarCategoria($params = null){
-        $idCategoria = $params[":ID"];
-        $categoria = $this->model->getCategoriasById($idCategoria);
-        $this->view->showFormularioEditarCategoria($categoria);
+        $logued = $this->helper->checkUserSession();
+        
+        if ($logued == True){ 
+            $idCategoria = $params[":ID"];
+            $categoria = $this->model->getCategoriasById($idCategoria);
+            $this->view->showFormularioEditarCategoria($categoria);
+        }
+        else{
+            header("Location: ".LOGIN);
+        }
     }
 
     //MUESTRA EL FORMULARIO EDITAR CATEGORIA
     function editarCategoria($params = null){
-        $categoria_ID = $params[':ID']; 
-        if((!empty($_POST['nombre']))) {
-            $this->model->updateCategoria($_POST['nombre'], $categoria_ID);
+        $logued = $this->helper->checkUserSession();
+        
+        if ($logued == True){ 
+            $categoria_ID = $params[':ID']; 
+            if((!empty($_POST['nombre']))) {
+                $this->model->updateCategoria($_POST['nombre'], $categoria_ID);
+            }
+            $this->view->showAdminCategoriasLocation();
         }
-        $this->view->showAdminCategoriasLocation();
+        else{
+            header("Location: ".LOGIN);
+        }
     }
 
      //MUESTRA LAS VIANDAS ASOCIADAS A UNA CATEGORIA
