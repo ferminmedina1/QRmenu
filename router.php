@@ -2,6 +2,7 @@
 
     require_once("app/controller/menuController.php");
     require_once("app/controller/categoriasController.php");
+    require_once("app/controller/userController.php");
     require_once("routerClass.php");
 
     define("BASE_URL", 'http://' .$_SERVER["SERVER_NAME"] . ':' . $_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]). '/');
@@ -35,5 +36,10 @@
 
     
     $r->addRoute("categoria/:ID","GET", "categoriasController", "mostrarPorCategoria");
+
+
+    //LOGIN CONFIGS.
+    $r->addRoute("login", "GET", "userController", "goToLog");
+
     //run
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']); 

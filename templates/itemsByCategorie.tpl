@@ -38,7 +38,6 @@
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 
-    <script src="././js/menuApi.js"></script>
     <script src="././js/nav.js"></script>
 </body>
 </html>

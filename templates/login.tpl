@@ -20,13 +20,23 @@
     
     <h2 class="titleAdmin">ADMINISTRACIÓN</h2>
     
-    <a href="menu" class="option">USUARIOS</a>
+    <section class="contenedorform">
 
-    <a href="admin/items" class="option">ITEMS</a>
+        <form class="formulario" action="verifyUser" method="post">
 
-    <a href='admin/categorias' class="option"> CATEGORIAS </a>
+            <h1 class="subtitulo"> Logueate! <img src="./images/user.png" alt="user" id="userFormulario"></h1>
+            
+            <label class="itemformulario"> Usuario: </label> <input type="text" name="input_user" required>
+            <label class="itemformulario"> E-mail: </label> <input type="email" name="input_user" required>
+            <label class="itemformulario"> Contraseña: </label> <input type="password" id="contra" name="input_pass" required>
+            <a href="register" id="register">No tienes una cuenta? Crea una haciendo click aca!</a>
+            <p id="avisoCaptcha">{$mensaje}</p>
+            <button type="submit" id="botonEnviar" >ENTRAR</button>
 
-    <a href='home' class="option2"> VOLVER </a>
+        </form>
+
+    </section>
+
 
 </div>
     <!-------------F0OTER----------->

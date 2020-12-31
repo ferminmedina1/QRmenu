@@ -48,6 +48,7 @@
             <a class="botonAdministrar" href="admin/items"> Volver a administrar</a>
         </section>
 
+    
  <!-- FOOTER -->
 
     {include file="footer.tpl"}

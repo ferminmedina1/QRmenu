@@ -12,6 +12,8 @@
     color: white;
     font-family: 'Courier New', Courier, monospace;
 }
+
+
 .option{
     margin: 20px;
     padding: 10px;
@@ -36,5 +38,24 @@
     border-left: 10px solid rgb(63, 63, 63);
     border-right: 10px solid rgb(32, 32, 32);
     border-bottom: 10px solid rgb(17, 17, 17);
+    transition: all ease 500ms;
+}
+
+.option2{
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(199, 182, 33);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 1000;
+    color: white;
+    width: 50%;
+    text-align: center;
+    border-radius: 5px;
+    border-top: 10px solid rgb(222, 224, 82);
+    border-left: 10px solid rgb(222, 224, 82);
+    border-right: 10px solid rgb(154, 156, 23);
+    border-bottom: 10px solid rgb(154, 156, 23);
+    color: rgb(26, 26, 26);
     transition: all ease 500ms;
 }

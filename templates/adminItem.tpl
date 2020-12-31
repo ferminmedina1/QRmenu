@@ -40,6 +40,10 @@
         </form>
 
     </div>
+
+    <section class="section-consultas">
+        <a class="botonAdministrar" href="admin"> Volver a administrar</a>
+    </section>
         
     <table>
         <thead>
@@ -59,7 +63,6 @@
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 
-    <script src="././js/menuApi.js"></script>
     <script src="././js/nav.js"></script>
 </body>
 </html>
