@@ -19,13 +19,34 @@ class userController{
     }
 
     function goToLog(){
-            $categorias = $this->categoriasModel->getCategorias();
-            $this->view->showLog($categorias);
+        $categorias = $this->categoriasModel->getCategorias();
+        $this->view->showLog($categorias);
     }
 
     function goToRegister(){
+        $logued = $this->helper->checkUserSession();
+        if ($logued == True){
+            $categorias = $this->categoriasModel->getCategorias();
+            $this->view->ShowRegister($categorias);
+        }
+        else{
+            header("Location: ".LOGIN);
+            die();
+        }
+    }
+
+    function AdminUsers(){
+        $logued = $this->helper->checkUserSession();
         $categorias = $this->categoriasModel->getCategorias();
-        $this->view->ShowRegister($categorias);
+
+        if ($logued == True){
+            $usuarios = $this->model->getAllUsers();
+            $this->view->showUsers($categorias,$usuarios);
+        }
+        else{
+            header("Location: ".LOGIN);
+            die();
+        }
     }
 
     function VerifyUser(){
@@ -87,24 +108,14 @@ class userController{
             //SI EL USER NO EXISTE LO AGREGA A LA DB
                 if ($existe == False) {        
                     $this->model->addUserDB($user,$hash,$mail);
-                    
-
-                    $userFromDB = $this->model->GetUser($user,$mail);
-                    session_start();    //SE INICIA UNA SESION
-                    $_SESSION["user"] = $userFromDB->user;    //SE TRAE EL user DEL USUARIO DESDE LA DB
-                    $_SESSION["ROL"] = $userFromDB->rol;    //SE TRAE EL ROL DEL USUARIO DESDE LA DB
-                    $_SESSION["id_user"] = $userFromDB->id_user;
-                    setcookie("id_user", $userFromDB->id_user); //SE CREA UNA COOKIE "id_user"
-                    
-                    header("Location: ".BASE_URL."home");
-                    echo($_COOKIE["id_user"]);
+                    header("Location: ".BASE_URL."admin/users");
                 }
                 else{
-                    $this->view->showRegister($categorias, "Usuario ya registrado");   
+                    $this->view->ShowRegister($categorias, "Ese mail o usuario ya esta ocupado!");   
                 }      
             }
             else{
-                $this->view->showRegister($categorias, "Ingresa los datos correspondientes");  
+                $this->view->ShowRegister($categorias, "Ingresa los datos correspondientes");  
             }
         }
         else{
@@ -112,12 +123,16 @@ class userController{
         } 
     }
 
-    function verificarUsuario($usuario){     
+    function verificarUsuario($usuario,$mail){     
         $existe = False;
         $usuarios = $this->model->getAllUsers();
         foreach ($usuarios as $user) {
-            print(strcasecmp($user->user, $usuario));
             if (strcasecmp($user->user, $usuario) === 0){
+                $existe = True;
+            }
+        }
+        foreach ($usuarios as $user) {
+            if (strcasecmp($user->mail, $mail) === 0){
                 $existe = True;
             }
         }

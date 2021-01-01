@@ -35,14 +35,14 @@
     <table>
     <thead>
         <tr>
-            <th>Tipo de categoria</th><th>Borrar/Editar</th>
+            <th>Categorias</th><th>Eliminar</th><th>Editar</th>
         </tr>
     </thead>
     <tbody>
         {foreach from=$categories item=categorie}
             <tr><td>{$categorie->nombre}</td>
-            <td class="botonBorrar"> <a href='eliminarCategoria/{$categorie->id_categoria}'><button class="botonBorrarTD" id="{$categorie->id_categoria}"><i class="fa fa-trash"></i></button></a>
-            <a href='editarCategoria/{$categorie->id_categoria}'><button class="botonEditarTD" id="{$categorie->id_categoria}"><i class="fa fa-edit"></i></button></a></td></tr>
+            <td class="botonBorrar"> <a href='eliminarCategoria/{$categorie->id_categoria}'><button class="botonBorrarTD" id="{$categorie->id_categoria}"><i class="fa fa-trash"></i></button></a></td>
+            <td><a href='editarCategoria/{$categorie->id_categoria}'><button class="botonEditarTD" id="{$categorie->id_categoria}"><i class="fa fa-edit"></i></button></a></td></tr>
         {/foreach}
     </tbody>
     </table>

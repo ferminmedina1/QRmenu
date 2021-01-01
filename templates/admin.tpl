@@ -19,9 +19,10 @@
 <a class="user">{$smarty.session.user}</a>
 
 <div class="administration">
+
     <h2 class="titleAdmin">ADMINISTRACIÓN</h2>
     
-    <a href="menu" class="option">USUARIOS</a>
+    <a href="admin/users" class="option">USUARIOS</a>
 
     <a href="admin/items" class="option">ITEMS</a>
 

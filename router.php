@@ -17,6 +17,7 @@
     
     //admin
     $r->addRoute("admin", "GET", "menuController", "Admin");
+    $r->addRoute("admin/users", "GET", "userController", "AdminUsers");
     $r->addRoute("admin/items", "GET", "menuController", "AdminItems");
     $r->addRoute("admin/categorias", "GET", "categoriasController", "AdminCategorias");
 
@@ -25,8 +26,8 @@
     $r->addRoute("verifyUser", "POST", "userController", "VerifyUser");
     $r->addRoute("logout", "GET", "userController", "logout");
 
-    $r->addRoute("addAdmin", "POST", "userController", "addAdmin"); 
-    $r->addRoute("register", "GET", "userController", "goToRegister");
+    $r->addRoute("admin/register", "GET", "userController", "goToRegister");
+    $r->addRoute("admin/addAdmin", "POST", "userController", "addAdmin"); 
 
     //ACCION ITEMS
     $r->addRoute("agregarItem", "POST", "menuController", "nuevoItem");

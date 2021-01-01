@@ -24,5 +24,11 @@ class userView{
         $this->smarty->assign('mensaje', $mensaje);
         $this->smarty->display('../templates/register.tpl');
     }
+
+    function showUsers($categories, $usuarios){
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->assign("usuarios", $usuarios);
+        $this->smarty->display('../templates/adminUsers.tpl');
+    }
     
 }
