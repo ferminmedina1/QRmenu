@@ -35,6 +35,20 @@ class userController{
         }
     }
 
+    function showFormEditarUser($params = null){
+        $logued = $this->helper->checkUserSession();
+        
+        if ($logued == True){ 
+            $id = $params[":ID"];
+            $item = $this->model->getUserById($id);
+            $categorias = $this->categoriasModel->getCategorias();
+            $this->view->showFormularioEditar($item,$categorias);
+        }
+        else{
+            header("Location: ".LOGIN);
+        }
+    }
+
     function AdminUsers(){
         $logued = $this->helper->checkUserSession();
         $categorias = $this->categoriasModel->getCategorias();
@@ -42,6 +56,22 @@ class userController{
         if ($logued == True){
             $usuarios = $this->model->getAllUsers();
             $this->view->showUsers($categorias,$usuarios);
+        }
+        else{
+            header("Location: ".LOGIN);
+            die();
+        }
+    }
+
+    function deleteUser($params = null){
+
+        $logued = $this->helper->checkUserSession();
+        $categorias = $this->categoriasModel->getCategorias();
+
+        if ($logued == True){
+            $id_user = $params[':ID'];
+            $this->model->deleteUser($id_user);
+            $this->view->showAdminUsersLocation($categorias);
         }
         else{
             header("Location: ".LOGIN);

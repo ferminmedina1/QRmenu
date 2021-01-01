@@ -29,8 +29,8 @@
             <tbody id="viandasTable">
                 {foreach from=$usuarios item=user}
                     <tr><td>{$user->user}</td><td>{$user->mail}</td>
-                    <td class="botonBorrar"> <a href='eliminarUsuario/{$user->id_user}'><button class="botonBorrarTD" id="{$user->id_user}"><i class="fa fa-trash"></i></button></a></td>
-                    <td><a href='editarPermisos/{$user->id_user}' ><button class="botonEditarTD" id="{$user->id_user}"><i class="fa fa-edit"></i></button></a></td></tr>
+                    <td class="botonBorrar"> <a href='eliminarUser/{$user->id_user}'><button class="botonBorrarTD" id="{$user->id_user}"><i class="fa fa-trash"></i></button></a></td>
+                    <td><a href='editarUser/{$user->id_user}' ><button class="botonEditarTD" id="{$user->id_user}"><i class="fa fa-edit"></i></button></a></td></tr>
                 {/foreach}
             </tbody>
         </table>

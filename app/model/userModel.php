@@ -16,6 +16,18 @@ class userModel{
         return $usuario;
     }
 
+    function getUserById($id){ 
+        $query = $this->db->prepare('SELECT * FROM users WHERE id_user = ?');
+        $query->execute([$id]);
+        $item = $query->fetch(PDO::FETCH_OBJ);
+        return $item;
+    }
+
+    function deleteUser($id){
+        $sentencia = $this->db->prepare('DELETE FROM users WHERE id_user = ?');
+        $sentencia->execute([$id]);
+    }
+
     function GetAllUsers(){
         $sentencia = $this->db->prepare('SELECT * FROM users');
         $sentencia->execute();

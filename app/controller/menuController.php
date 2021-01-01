@@ -130,7 +130,9 @@ class menuController{
                             $this->model->updateItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'], $id, $fileTmpName);
                         }
                     }else{
-                        $this->model->updateItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'], $id, '');
+                        $item = $this->model->getItemById($id);
+                        $img= $item->imagen;
+                        $this->model->updateItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'], $id, $img);
                     }
             }
             $this->view->showAdminItemsLocation();  

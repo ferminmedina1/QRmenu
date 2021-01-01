@@ -30,5 +30,15 @@ class userView{
         $this->smarty->assign("usuarios", $usuarios);
         $this->smarty->display('../templates/adminUsers.tpl');
     }
+
+    function showFormularioEditar($user,$categorias){
+        $this->smarty -> assign('categories', $categorias);
+        $this->smarty -> assign('user', $user);
+        $this->smarty->display('../templates/editUser.tpl');
+    }
+
+    function showAdminUsersLocation(){
+        header("Location: ".BASE_URL."admin/users");
+    }
     
 }
