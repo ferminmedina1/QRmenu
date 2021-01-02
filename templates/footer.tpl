@@ -13,7 +13,7 @@
     
                 <a class="itemFooter" id="admin" href="admin">Admin</a>
   
-                <a class="itemFooter" id="about">Redes</a>
+                <a class="itemFooter" id="about" href="redes">Redes</a>
             </section>
 
         </article>

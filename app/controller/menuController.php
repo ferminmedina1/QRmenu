@@ -34,6 +34,11 @@ class menuController{
         $this->view->showMenu($items,$images,$categorias);
     }
 
+    function Redes(){
+        $categorias = $this->categoriasModel->getCategorias();
+        $this->view->showRedes($categorias);
+    }
+
     function Admin(){
         $logued = $this->helper->checkUserSession();
         

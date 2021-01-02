@@ -14,6 +14,8 @@
     $r->setDefaultRoute("menuController", "Home");
 
     $r->addRoute("home", "GET", "menuController", "Home");
+    $r->addRoute("redes", "GET", "menuController", "Redes");
+    $r->addRoute("categoria/:ID","GET", "categoriasController", "mostrarPorCategoria");
     
     //admin
     $r->addRoute("admin", "GET", "menuController", "Admin");
@@ -47,7 +49,7 @@
     $r->addRoute("actualizarCategoria/:ID", "POST", "categoriasController", "editarCategoria");
 
 
-    $r->addRoute("categoria/:ID","GET", "categoriasController", "mostrarPorCategoria");
+
 
 
 
