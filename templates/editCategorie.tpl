@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Viandita! - Administracion - Editar Categoria</title>
+    <title>Example Store - Administracion - Editar Categoria</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/item.css">
     <link rel="stylesheet" href="../css/styleAdmin.css">
