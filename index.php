@@ -1,1 +1,1 @@
-<?php require_once("templates/menu");
+<?php require_once("templates/menu.tpl");
