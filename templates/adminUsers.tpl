@@ -16,26 +16,27 @@
     {include file="header.tpl"}
     
     <!-------------CONTENT----------->
-
-    <h2 class="option">ADMINISTRAR USUARIOS</h2>
-
-    <a class="option2" href="admin/register">Agregar ADMIN</a>
+    <div class="content">
+        <h2 class="tituloSeccion">ADMINISTRAR USUARIOS</h2>
+        <a class="boton1" href="admin/register">Agregar administrador</a>
+        <a class="botonVolver" href="admin"> Volver a administrar</a>
+    </div>
+    <div class="tabla">
         <table>
             <thead>
                 <tr>
-                    <th>Usuario</th><th>E-mail</th><th>Eliminar</th><th>Editar rol</th>
+                    <th>Usuario</th><th>E-mail</th><th>Eliminar</th>
                 </tr>
             </thead>
             <tbody id="viandasTable">
                 {foreach from=$usuarios item=user}
                     <tr><td>{$user->user}</td><td>{$user->mail}</td>
-                    <td class="botonBorrar"> <a href='eliminarUser/{$user->id_user}'><button class="botonBorrarTD" id="{$user->id_user}"><i class="fa fa-trash"></i></button></a></td>
-                    <td><a href='editarUser/{$user->id_user}' ><button class="botonEditarTD" id="{$user->id_user}"><i class="fa fa-edit"></i></button></a></td></tr>
+                    <td class="botonBorrar"> <a href='eliminarUser/{$user->id_user}'><button class="botonBorrarTD" id="{$user->id_user}"><i class="fa fa-trash"></i></button></a></td></tr>
                 {/foreach}
             </tbody>
         </table>
+    </div>
 
-        <a class="botonAdministrar" href="admin"> Volver a administrar</a>
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 

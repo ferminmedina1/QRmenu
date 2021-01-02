@@ -31,6 +31,7 @@
     $r->addRoute("admin/addAdmin", "POST", "userController", "addAdmin"); 
     $r->addRoute("editarUser/:ID", "GET", "userController", "showFormEditarUser");
     $r->addRoute("eliminarUser/:ID", "GET", "userController", "deleteUser");
+    $r->addRoute("actualizarUser/:ID", "POST", "userController", "editarUser");
 
     //ACCION ITEMS
     $r->addRoute("agregarItem", "POST", "menuController", "nuevoItem");

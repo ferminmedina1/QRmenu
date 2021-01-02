@@ -1,0 +1,22 @@
+#login{
+    background-color: inherit;
+}
+
+#botonEntrar{
+    width: 100%;
+    margin: 0;
+}
+
+.subtitulo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#userFormulario{
+    width: 30px;
+    background-color: rgb(146, 146, 146);
+    padding: 10px;
+    border-radius: 100%;
+    border: 3px solid rgb(99, 99, 99);
+}

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="././css/item.css">
     <link rel="stylesheet" href="././css/style.css">
     <link rel="stylesheet" href="././css/styleAdmin.css">
+    <link rel="stylesheet" href="././css/styleLogin.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <base href="{$base_url}">
@@ -22,13 +23,13 @@
     
     <section class="contenedorform">
 
-        <form class="formulario" action="verifyUser" method="post">
+        <form class="formulario" action="verifyUser" method="post" id="login">
             <h1 class="subtitulo"> Logueate! <img src="./img/user.png" alt="user" id="userFormulario"></h1>
             
             <label class="itemformulario"> Usuario: </label> <input type="text" name="input_user" required>
             <label class="itemformulario"> Contraseña: </label> <input type="password" id="pass" name="input_pass" required>
             <p id="avisoCaptcha">{$mensaje}</p>
-            <button type="submit" id="botonEnviar" class="option">ENTRAR</button>
+            <button type="submit" id="botonEntrar" class="option">ENTRAR</button>
 
         </form>
 

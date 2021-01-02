@@ -18,13 +18,11 @@
     <!-------------CONTENT----------->    
 <div class="administration">
     
-    <h2 class="titleAdmin">ADMINISTRACIÓN</h2>
     
-    <section class="contenedorform">
+    <section class="formSection">
+        <h2 class="titleAdmin">REGISTRA UN NUEVO ADMIN!</h2>
 
-        <form class="formulario" action="admin/addAdmin" method="post">
-            <h1 class="subtitulo"> REGISTRA UN NUEVO ADMIN! <img src="./img/user.png" alt="user" id="userFormulario"></h1>
-            
+        <form class="formulario" action="admin/addAdmin" method="post">           
             <label class="itemformulario"> Usuario: </label> <input type="text" name="user" required>
             <label class="itemformulario"> E-mail: </label> <input type="email" name="mail" required>
             <label class="itemformulario"> Contraseña: </label> <input type="password" id="pass" name="pass" required>
@@ -35,7 +33,7 @@
 
     </section>
 
-    <a class="botonAdministrar" href="admin/items"> Volver a administrar</a>
+     <a class="botonVolver" href="admin/users"> Volver a administrar usuarios</a>
 </div>
     <!-------------F0OTER----------->
     {include file="footer.tpl"}

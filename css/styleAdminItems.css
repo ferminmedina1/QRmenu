@@ -1,0 +1,14 @@
+.tipoDeCategoria{
+    padding: 20px;
+}
+
+.selectCategory{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    background-color: rgb(71, 71, 71);
+    color: white;
+    width: auto;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}

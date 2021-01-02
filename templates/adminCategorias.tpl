@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/item.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/styleAdmin.css">
+    <link rel="stylesheet" href="../css/styleAdminCategories.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <base href="{$base_url}">
@@ -17,20 +18,20 @@
     
     <!-------------CONTENT----------->
     <div class="categorias">
-        <h4>ADMINISTRAR CATEGORIAS</h4>
+        <section class="formSection">
+            <h4 class="tituloSeccion">ADMINISTRAR CATEGORIAS</h4>
 
-            <form action="agregarCategoria" method="post">
-                    <div class="categoriaNueva">
-                        <div class="agregarCategoria">
-                            <input type="text" name="tipo_item" id="nuevaCategoria" placeholder="Nueva categoria">
-                            <button type="submit" id="addCategoria_db">Agregar categoria</button>
+                <form action="agregarCategoria" method="post">
+                        <div class="categoriaNueva">
+                            <div class="textoInput">
+                                <input type="text" name="tipo_item" id="nuevaCategoria" placeholder="Nueva categoria" >
+                                <button type="submit" id="addCategoria_db" class="boton1">Agregar categoria</button>
+                            </div>
                         </div>
-                    </div>
-            </form>
-        </div> 
-    <section class="section-consultas">
-        <a class="botonAdministrar" href="admin"> Volver a administrar</a>
-    </section>
+                </form>
+            	<a class="botonVolver" href="admin"> Volver a administrar</a>
+        </section>
+    </div> 
 
     <table>
     <thead>

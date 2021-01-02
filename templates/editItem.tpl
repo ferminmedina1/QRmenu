@@ -26,10 +26,11 @@
              
             <form class="formulario" method="post" action="actualizarItem/{$item->id_item}" enctype="multipart/form-data">
                 <h1 class="subtitulo"> EDITA LA CATEGORIA:  {$item->titulo}</h1>
-                <label class="itemformulario"> Nombre: </label> <input type="text" name="nombre" placeholder="Anteriormente era: {$item->titulo}">
+                <label class="itemformulario"> Nombre: </label> <input type="text" name="nombre" value={$item->titulo}>
                 <label class="itemformulario"> Precio: </label> <input type="number" name="precio"  REQUIRED value={$item->precio}>
                 <label class="itemformulario"> Categoria: (Anteriormente era de la categoria: {$item->nombre})</label> 
                 <select name="categoria" id="select">
+                    <option value="" selected disabled hidden>{$item->nombre}</option>
                     {foreach from=$categories item=categoria}
                         <option value="{$categoria->id_categoria}">{$categoria->nombre}</option>
                     {/foreach}
