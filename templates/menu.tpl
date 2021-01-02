@@ -16,28 +16,29 @@
     {include file="header.tpl"}
     
     <!-------------CONTENT----------->
-    {assign var=i value=0}
-    {foreach from=$categories item=categorie}
-        <ul class="menuList">
-            <h1>{$categorie->nombre}</h1>
+    <article class="content">
+        {assign var=i value=0}
+        {foreach from=$categories item=categorie}
+            <ul class="menuList">
+                <h1 class="subtitle">{$categorie->nombre}</h1>
 
-        {foreach from=$items item=item}
-        {if $categorie->id_categoria eq $item->id_categoria}
-            <li class="itemMenu"> 
-            {if ($images[$i] != '')} 
-            <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
+            {foreach from=$items item=item}
+            {if $categorie->id_categoria eq $item->id_categoria}
+                <li class="itemMenu"> 
+                {if ($images[$i] != '')} 
+                <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
+                {/if}
+                <div class="titlePrice">
+                    <h1>{$item->titulo}</h1>
+                    <h2>${$item->precio}</h2>
+                </div>
+                </li>
+            <!--{$i++}--> 
             {/if}
-            <div class="titlePrice">
-                <h1>{$item->titulo}</h1>
-                <h2>${$item->precio}</h2>
-            </div>
-            </li>
-        <!--{$i++}--> 
-        {/if}
+            {/foreach}
+            </ul>
         {/foreach}
-        </ul>
-    {/foreach}
-    
+    </article>
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 

@@ -17,37 +17,38 @@
     {include file="header.tpl"}
     
     <!-------------CONTENT----------->
-    <div class="categorias">
-        <section class="formSection">
-            <h4 class="tituloSeccion">ADMINISTRAR CATEGORIAS</h4>
+    <article class="content">
+        <div class="categorias">
+            <section class="formSection">
+                <h4 class="tituloSeccion">ADMINISTRAR CATEGORIAS</h4>
 
-                <form action="agregarCategoria" method="post">
-                        <div class="categoriaNueva">
-                            <div class="textoInput">
-                                <input type="text" name="tipo_item" id="nuevaCategoria" placeholder="Nueva categoria" >
-                                <button type="submit" id="addCategoria_db" class="boton1">Agregar categoria</button>
+                    <form action="agregarCategoria" method="post">
+                            <div class="categoriaNueva">
+                                <div class="textoInput">
+                                    <input type="text" name="tipo_item" id="nuevaCategoria" placeholder="Nueva categoria" >
+                                    <button type="submit" id="addCategoria_db" class="boton1">Agregar categoria</button>
+                                </div>
                             </div>
-                        </div>
-                </form>
-            	<a class="botonVolver" href="admin"> Volver a administrar</a>
-        </section>
-    </div> 
+                    </form>
+                    <a class="botonVolver" href="admin"> Volver a administrar</a>
+            </section>
+        </div> 
 
-    <table>
-    <thead>
-        <tr>
-            <th>Categorias</th><th>Eliminar</th><th>Editar</th>
-        </tr>
-    </thead>
-    <tbody>
-        {foreach from=$categories item=categorie}
-            <tr><td>{$categorie->nombre}</td>
-            <td class="botonBorrar"> <a href='eliminarCategoria/{$categorie->id_categoria}'><button class="botonBorrarTD" id="{$categorie->id_categoria}"><i class="fa fa-trash"></i></button></a></td>
-            <td><a href='editarCategoria/{$categorie->id_categoria}'><button class="botonEditarTD" id="{$categorie->id_categoria}"><i class="fa fa-edit"></i></button></a></td></tr>
-        {/foreach}
-    </tbody>
-    </table>
-    
+        <table>
+        <thead>
+            <tr>
+                <th>Categorias</th><th>Eliminar</th><th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {foreach from=$categories item=categorie}
+                <tr><td>{$categorie->nombre}</td>
+                <td class="botonBorrar"> <a href='eliminarCategoria/{$categorie->id_categoria}'><button class="botonBorrarTD" id="{$categorie->id_categoria}"><i class="fa fa-trash"></i></button></a></td>
+                <td><a href='editarCategoria/{$categorie->id_categoria}'><button class="botonEditarTD" id="{$categorie->id_categoria}"><i class="fa fa-edit"></i></button></a></td></tr>
+            {/foreach}
+        </tbody>
+        </table>
+    </article>
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 

@@ -16,7 +16,8 @@
     {include file="header.tpl"}
     
     <!-------------CONTENT----------->
-    <h1>{$categoria->nombre}</h1>
+    <article class="content">
+        <h1>{$categoria->nombre}</h1>
     
         <ul class="menuList">
         {assign var=i value=0}
@@ -34,7 +35,7 @@
         <!--{$i++}--> 
         {/foreach}
         </ul>
-    
+    </article>
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 

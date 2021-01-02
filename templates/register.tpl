@@ -16,25 +16,23 @@
     {include file="header.tpl"}
     
     <!-------------CONTENT----------->    
-<div class="administration">
+    <article class="administration content">
     
     
-    <section class="formSection">
-        <h2 class="titleAdmin">REGISTRA UN NUEVO ADMIN!</h2>
+        <section class="formSection">
+            <h2 class="titleAdmin">REGISTRA UN NUEVO ADMIN!</h2>
 
-        <form class="formulario" action="admin/addAdmin" method="post">           
-            <label class="itemformulario"> Usuario: </label> <input type="text" name="user" required>
-            <label class="itemformulario"> E-mail: </label> <input type="email" name="mail" required>
-            <label class="itemformulario"> Contraseña: </label> <input type="password" id="pass" name="pass" required>
-            <p id="avisoCaptcha">{$mensaje}</p>
-            <button type="submit" id="botonEnviar" class="option2">REGISTRAR</button>
+            <form class="formulario" action="admin/addAdmin" method="post">           
+                <label class="itemformulario"> Usuario: </label> <input type="text" name="user" required>
+                <label class="itemformulario"> E-mail: </label> <input type="email" name="mail" required>
+                <label class="itemformulario"> Contraseña: </label> <input type="password" id="pass" name="pass" required>
+                <p id="avisoCaptcha">{$mensaje}</p>
+                <button type="submit" id="botonEnviar" class="option2">REGISTRAR</button>
+            </form>
+        </section>
 
-        </form>
-
-    </section>
-
-     <a class="botonVolver" href="admin/users"> Volver a administrar usuarios</a>
-</div>
+        <a class="botonVolver" href="admin/users"> Volver a administrar usuarios</a>
+    </article>
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 

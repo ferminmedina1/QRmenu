@@ -17,7 +17,7 @@
     {include file="header.tpl"}
     
     <!-------------CONTENT----------->
-    <article>
+    <article class="content">
 
         <section class="contacto">
 

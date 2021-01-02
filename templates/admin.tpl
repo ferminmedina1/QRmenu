@@ -15,24 +15,26 @@
     <!-------------HEADER----------->
     {include file="header.tpl"}
     
-    <!-------------CONTENT----------->    
-<a class="user">{$smarty.session.user}</a>
+    <!-------------CONTENT----------->   
+    <article class="content"> 
+    <a class="user">{$smarty.session.user}</a>
 
-<div class="administration">
+    <div class="administration">
 
-    <h2 class="titleAdmin">ADMINISTRACIÓN</h2>
-    
-    <a href="admin/users" class="option">USUARIOS</a>
+        <h2 class="titleAdmin">ADMINISTRACIÓN</h2>
+        
+        <a href="admin/users" class="option">USUARIOS</a>
 
-    <a href="admin/items" class="option">ITEMS</a>
+        <a href="admin/items" class="option">ITEMS</a>
 
-    <a href='admin/categorias' class="option"> CATEGORIAS </a>
+        <a href='admin/categorias' class="option"> CATEGORIAS </a>
 
-    <a href='home' class="option2"> VOLVER </a>
+        <a href='home' class="option2"> VOLVER AL MENU</a>
 
-    <a href='logout' class="option3"> CERRAR SESIÓN </a>
+        <a href='logout' class="option3"> CERRAR SESIÓN </a>
 
-</div>
+    </div>
+    </article>
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 

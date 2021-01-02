@@ -20,7 +20,7 @@
 
  <!-- FORMULARIO -->
 
-    <article>
+    <article class="content">
 
         <section class="contenedorform">
              
@@ -42,12 +42,9 @@
             </form>
 
         </section>
-
+        
+        <a class="botonVolver" href="admin/items"> Volver a administrar</a>
     </article>
-
-        <section class="section-consultas">
-            <a class="botonAdministrar" href="admin/items"> Volver a administrar</a>
-        </section>
 
     
  <!-- FOOTER -->

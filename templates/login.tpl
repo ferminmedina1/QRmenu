@@ -17,7 +17,7 @@
     {include file="header.tpl"}
     
     <!-------------CONTENT----------->    
-<div class="administration">
+<article class="administration content">
     
     <h2 class="titleAdmin">ADMINISTRACIÓN</h2>
     
@@ -30,11 +30,10 @@
             <label class="itemformulario"> Contraseña: </label> <input type="password" id="pass" name="input_pass" required>
             <p id="avisoCaptcha">{$mensaje}</p>
             <button type="submit" id="botonEntrar" class="option">ENTRAR</button>
-
         </form>
 
     </section>
-</div>
+</article>
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 

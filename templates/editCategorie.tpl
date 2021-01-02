@@ -20,25 +20,20 @@
 
  <!-- FORMULARIO -->
 
-    <article>
+    <article class="content">
 
         <section class="contenedorform">
-             
             <form class="formulario" method="post" action="actualizarCategoria/{$categoria->id_categoria}">
                 <h1 class="subtitulo"> EDITA LA CATEGORIA:  {$categoria->nombre}</h1>
                 <label class="itemformulario"> Nombre: </label> <input type="text" name="nombre" placeholder="Anteriormente era: {$categoria->nombre}">
-
                 <button type="submit" id="botonEnviar">Actualizar!</button>
-
             </form>
-
         </section>
 
+        <a class="botonVolver" href="admin"> Volver a administrar</a>
+        
     </article>
 
-        <section class="section-consultas">
-            <a class="botonAdministrar" href="admin/categorias"> Volver a administrar</a>
-        </section>
 
  <!-- FOOTER -->
 
