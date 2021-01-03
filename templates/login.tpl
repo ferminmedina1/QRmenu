@@ -21,14 +21,16 @@
     
     <h2 class="titleAdmin">ADMINISTRACIÓN</h2>
     
-    <section class="contenedorform">
+    <section class="formSection">
 
         <form class="formulario" action="verifyUser" method="post" id="login">
             <h1 class="subtitulo"> Logueate! <img src="./img/user.png" alt="user" id="userFormulario"></h1>
             
-            <label class="itemformulario"> Usuario: </label> <input type="text" name="input_user" required>
-            <label class="itemformulario"> Contraseña: </label> <input type="password" id="pass" name="input_pass" required>
-            <p id="avisoCaptcha">{$mensaje}</p>
+            <div class="inputsPrincipales">
+                <label class="itemformulario"> Usuario: </label> <input type="text" name="input_user" required>
+                <label class="itemformulario"> Contraseña: </label> <input type="password" id="pass" name="input_pass" required>
+                <p id="avisoCaptcha">{$mensaje}</p>
+            </div>
             <button type="submit" id="botonEntrar" class="option">ENTRAR</button>
         </form>
 

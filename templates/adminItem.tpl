@@ -20,7 +20,7 @@
     <article class="content">
         <section class="formSection">
             <h2 class="tituloSeccion">Administrar items</h2>
-            <form action="agregarItem" method="POST" enctype="multipart/form-data">
+            <form class="formulario" action="agregarItem" method="POST" enctype="multipart/form-data">
 
                 <div class="inputsPrincipales">
                     <label class="textoInput"> Nombre: <input type="text" REQUIRED name="nombre" id="producto"> </label>
