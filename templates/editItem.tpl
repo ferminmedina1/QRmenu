@@ -22,22 +22,25 @@
 
     <article class="content">
 
-        <section class="contenedorform">
+        <section class="formSection">
+            
+            <h2 class="tituloSeccion"> EDITA LA CATEGORIA:  {$item->titulo}</h2>
              
-            <form class="formulario" method="post" action="actualizarItem/{$item->id_item}" enctype="multipart/form-data">
-                <h1 class="subtitulo"> EDITA LA CATEGORIA:  {$item->titulo}</h1>
-                <label class="itemformulario"> Nombre: </label> <input type="text" name="nombre" value={$item->titulo}>
-                <label class="itemformulario"> Precio: </label> <input type="number" name="precio"  REQUIRED value={$item->precio}>
-                <label class="itemformulario"> Categoria: (Anteriormente era de la categoria: {$item->nombre})</label> 
-                <select name="categoria" id="select">
+            <form method="post" action="actualizarItem/{$item->id_item}" enctype="multipart/form-data">
+            <div class="inputsPrincipales">
+                <label class="textoInput"> Nombre: <input type="text" name="nombre" value={$item->titulo}></label>
+                <label class="textoInput"> Precio: <input type="number" name="precio"  REQUIRED value={$item->precio}></label>
+                <label class="textoInput"> Categoria: (Anteriormente era de la categoria: {$item->nombre})
+                <select name="categoria" id="select" class="selectCategory">
                     <option value="" selected disabled hidden>{$item->nombre}</option>
                     {foreach from=$categories item=categoria}
                         <option value="{$categoria->id_categoria}">{$categoria->nombre}</option>
                     {/foreach}
-                </select>            
+                </select> </label>     
                 <label class="textoInput"> Nueva Imagen: <input type="file" name="file"/></label>
+            </div>
 
-                <button type="submit" id="botonEnviar">Actualizar!</button>
+                <button type="submit" id="botonEnviar" class="boton1">Actualizar!</button>
 
             </form>
 

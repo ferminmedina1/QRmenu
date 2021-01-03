@@ -16,26 +16,29 @@
     {include file="header.tpl"}
     
     <!-------------CONTENT----------->    
-    <article class="administration content">
+    <article class="content">
     
     
         <section class="formSection">
-            <h2 class="titleAdmin">REGISTRA UN NUEVO ADMIN!</h2>
+            <h2 class="tituloSeccion">REGISTRA UN NUEVO ADMIN!</h2>
 
             <form class="formulario" action="admin/addAdmin" method="post">           
-                <label class="itemformulario"> Usuario: </label> <input type="text" name="user" required>
-                <label class="itemformulario"> E-mail: </label> <input type="email" name="mail" required>
-                <label class="itemformulario"> Contraseña: </label> <input type="password" id="pass" name="pass" required>
-                <p id="avisoCaptcha">{$mensaje}</p>
-                <button type="submit" id="botonEnviar" class="option2">REGISTRAR</button>
+                <div class="inputsPrincipales">
+                <label class="textoInput"> Usuario:  <input type="text" name="user" required></label>
+                <label class="textoInput"> E-mail:  <input type="email" name="mail" required></label>
+                <label class="textoInput"> Contraseña:  <input type="password" id="pass" name="pass" required></label>
+                </div>
+                <p id="avisoCaptcha" class="notMessage">{$mensaje}</p>
+                <button type="submit" id="botonEnviar" class="boton1">REGISTRAR</button>
             </form>
+            <a class="botonVolver" href="admin/users"> Volver a administrar usuarios</a>
         </section>
 
-        <a class="botonVolver" href="admin/users"> Volver a administrar usuarios</a>
     </article>
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 
     <script src="././js/nav.js"></script>
+    <script src="././js/message.js"></script>
 </body>
 </html>

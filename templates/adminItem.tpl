@@ -19,7 +19,7 @@
     <!-------------CONTENT----------->
     <article class="content">
         <section class="formSection">
-            <h3 class="tituloSeccion">Administrar items</h3>
+            <h2 class="tituloSeccion">Administrar items</h2>
             <form action="agregarItem" method="POST" enctype="multipart/form-data">
 
                 <div class="inputsPrincipales">
