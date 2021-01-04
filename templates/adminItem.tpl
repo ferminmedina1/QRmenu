@@ -24,13 +24,15 @@
 
                 <div class="inputsPrincipales">
                     <label class="textoInput"> Nombre: <input type="text" REQUIRED name="nombre" id="producto"> </label>
-                    <label class="textoInput"> Precio: <input type="number" REQUIRED name="precio" id="precio"> </label>
+                    <label class="textoInput"> Precio: <div class="price"><p>$</p><input type="number" REQUIRED name="precio" id="precio"> </div></label>
+                    <label class="textoInput"> Descripcion: <input type="text" name="descripcion" id="descripcion"> </label>
                     <label class="textoInput"> Imagen: <input type="file" name="file"/></label>
                 </div>
             
                 <div class="textoInput">
                     Categoria:
-                    <select name="categoria" id="select" class="selectCategory">
+                    <select name="categoria" id="select" class="selectCategory" REQUIRED>
+                        <option value="" selected disabled hidden></option>
                         {foreach from=$categories item=categoria}
                             <option value="{$categoria->id_categoria}">{$categoria->nombre}</option>
                         {/foreach}
@@ -45,15 +47,16 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Item</th><th>Precio</th><th>Categoria</th><th>Imagen</th><th>Eliminar</th><th>Editar</th>
+                        <th>Item</th><th>Precio</th><th>Categoria</th><th>Descripcion</th><th>Imagen</th><th>Eliminar</th><th>Editar</th>
                     </tr>
                 </thead>
                 <tbody id="itemsTable">
                     {assign var=i value=0}
                     {foreach from=$items item=item}
-                        <tr><td>{$item->titulo}</td><td>${$item->precio}</td><td>{$item->nombre}</td><td>{if ($images[$i] != '')} 
-                                                                                                        <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
-                                                                                                        {/if}</td>
+                        <tr><td>{$item->titulo}</td><td>${$item->precio}</td><td>{$item->nombre}</td><td>{$item->descripcion}</td>
+                        <td>{if ($images[$i] != '')} 
+                        <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
+                        {/if}</td>
                         <td class="botonBorrar"> <a href='eliminarItem/{$item->id_item}'><button class="botonBorrarTD" id="{$item->id_item}"><i class="fa fa-trash"></i></button></a></td>
                         <td><a href='editarItem/{$item->id_item}' ><button class="botonEditarTD" id="{$item->id_item}"><i class="fa fa-edit"></i></button></a></td></tr>
                     <!--{$i++}--> 

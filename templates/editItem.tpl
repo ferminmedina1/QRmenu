@@ -28,11 +28,12 @@
              
             <form method="post" action="actualizarItem/{$item->id_item}" enctype="multipart/form-data">
             <div class="inputsPrincipales">
-                <label class="textoInput"> Nombre: <input type="text" name="nombre" value={$item->titulo}></label>
-                <label class="textoInput"> Precio: <input type="number" name="precio"  REQUIRED value={$item->precio}></label>
+                <label class="textoInput"> Nombre: <input type="text" name="nombre" value="{$item->titulo}"></label>
+                <label class="textoInput"> Precio: <input type="number" name="precio"  REQUIRED value="{$item->precio}"></label>
+                <label class="textoInput"> Descripcion: <input type="text" name="descripcion"  value="{$item->descripcion}"></label>
                 <label class="textoInput"> Categoria: (Anteriormente era de la categoria: {$item->nombre})
-                <select name="categoria" id="select" class="selectCategory">
-                    <option value="" selected disabled hidden>{$item->nombre}</option>
+                <select name="categoria" id="select" class="selectCategory" REQUIRED>
+                    <option value="" selected disabled hidden></option>
                     {foreach from=$categories item=categoria}
                         <option value="{$categoria->id_categoria}">{$categoria->nombre}</option>
                     {/foreach}

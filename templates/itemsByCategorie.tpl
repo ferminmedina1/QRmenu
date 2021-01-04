@@ -17,8 +17,9 @@
     
     <!-------------CONTENT----------->
     <article class="content">
-        <h1>{$categoria->nombre}</h1>
-    
+        <div class="containerTitle">
+            <h1 class="principalTitle">{$categoria->nombre}</h1>
+        </div>
         <ul class="menuList">
         {assign var=i value=0}
 
@@ -27,9 +28,12 @@
             {if ($images[$i] != '')} 
             <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
             {/if}
-            <div class="titlePrice">
-                <h1>{$item->titulo}</h1>
-                <h2>${$item->precio}</h2>
+            <div class="itemInformation">
+                <div class="titleDescription">
+                    <h1>{$item->titulo}</h1>
+                    <p>{$item->descripcion}</p>
+                </div>
+                    <h2>${$item->precio}</h2>
             </div>
             </li>
         <!--{$i++}--> 

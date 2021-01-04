@@ -14,9 +14,9 @@ class menuModel{
         return $items;
     }
 
-    function insertItem($nombre,$precio,$categoria,$img){
-        $query = $this->db->prepare('INSERT INTO items(titulo,precio,id_categoria,imagen) VALUES (?,?,?,?)');
-        $query->execute([$nombre,$precio,$categoria,$img]);
+    function insertItem($nombre,$precio,$categoria,$descripcion, $img){
+        $query = $this->db->prepare('INSERT INTO items(titulo,precio,id_categoria,descripcion,imagen) VALUES (?,?,?,?,?)');
+        $query->execute([$nombre,$precio,$categoria,$descripcion,$img]);
     }
 
     function deleteItem($id) {      
@@ -31,9 +31,9 @@ class menuModel{
         return $item;
     }
 
-    function updateItem($nombre,$precio,$categoria,$id,$img){
-        $query = $this->db->prepare("UPDATE items SET titulo=?, precio=?, imagen=?, id_categoria=? WHERE id_item = ?");
-        $query->execute(array($nombre,$precio,$img ,$categoria,$id));
+    function updateItem($nombre,$precio,$categoria,$id,$descripcion,$img){
+        $query = $this->db->prepare("UPDATE items SET titulo=?, precio=?, descripcion=?, imagen=?, id_categoria=? WHERE id_item = ?");
+        $query->execute(array($nombre,$precio,$descripcion,$img ,$categoria,$id));
     }
 }
 

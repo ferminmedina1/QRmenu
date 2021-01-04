@@ -71,7 +71,11 @@ class menuController{
 
     function nuevoItem(){
         $logued = $this->helper->checkUserSession();
-        
+        $descripcion = $_POST['descripcion'];
+        if(empty($_POST['descripcion'])){
+            $descripcion= "";
+        }
+
         if ($logued == True){ 
             if((!empty($_POST['nombre'])) && (!empty($_POST['precio'])) && (!empty($_POST['categoria']))) {
 
@@ -79,10 +83,10 @@ class menuController{
                 $fileName= $_FILES['file']['name']; //saco los datos de la imagen.
                 $fileTmpName= file_get_contents($_FILES['file']['tmp_name']);
                     if((!empty($fileName))){
-                        $this->model->insertItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'],$fileTmpName);
+                        $this->model->insertItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'], $descripcion, $fileTmpName);
                     }
                 }else{
-                    $this->model->insertItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'],"");
+                    $this->model->insertItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'],$descripcion,"");
                 }
             }
             $this->view->showAdminItemsLocation(); 
@@ -126,19 +130,23 @@ class menuController{
         if ($logued == True){ 
             $id = $params[':ID'];
 
+            $descripcion = $_POST['descripcion'];
+            if(empty($_POST['descripcion'])){
+                $descripcion= "";
+            }
+            
             if((!empty($_POST['nombre'])) && (!empty($_POST['precio'])) && (!empty($_POST['categoria']))) {
-
                 if($_FILES['file']['error'] == 0){ //sefija si hubo algun error (si esta vacio es 4).
                     $fileName= $_FILES['file']['name']; //saco los datos de la imagen.
                     $fileTmpName= file_get_contents($_FILES['file']['tmp_name']);
                         if((!empty($fileName))){
-                            $this->model->updateItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'], $id, $fileTmpName);
+                            $this->model->updateItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'], $id, $descripcion, $fileTmpName);
                         }
-                    }else{
-                        $item = $this->model->getItemById($id);
-                        $img= $item->imagen;
-                        $this->model->updateItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'], $id, $img);
-                    }
+                }else{
+                    $item = $this->model->getItemById($id);
+                    $img= $item->imagen;
+                    $this->model->updateItem($_POST['nombre'], $_POST['precio'], $_POST['categoria'], $id, $descripcion, $img);
+                }
             }
             $this->view->showAdminItemsLocation();  
         }

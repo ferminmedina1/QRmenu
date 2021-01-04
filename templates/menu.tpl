@@ -20,7 +20,9 @@
         {assign var=i value=0}
         {foreach from=$categories item=categorie}
             <ul class="menuList">
-                <h1 class="subtitle">{$categorie->nombre}</h1>
+            <div class="containerTitle">
+                <h1 class="principalTitle">{$categorie->nombre}</h1>
+            </div>
 
             {foreach from=$items item=item}
             {if $categorie->id_categoria eq $item->id_categoria}
@@ -28,8 +30,12 @@
                 {if ($images[$i] != '')} 
                 <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
                 {/if}
-                <div class="titlePrice">
-                    <h1>{$item->titulo}</h1>
+                <div class="itemInformation">
+                    <div class="titleDescription">
+                        <h1>{$item->titulo}</h1>
+                        <p>{$item->descripcion}</p>
+                    </div>
+                    
                     <h2>${$item->precio}</h2>
                 </div>
                 </li>
