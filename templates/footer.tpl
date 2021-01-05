@@ -1,5 +1,4 @@
     <footer>
-        <article>
             <section class="copyright">
                 <p>Copyright © 2020 Example Inc. All rights reserved.</p>
             </section>
@@ -15,6 +14,4 @@
   
                 <a class="itemFooter" id="about" href="redes">Redes</a>
             </section>
-
-        </article>
     </footer>

@@ -133,6 +133,9 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    min-height: 150px;
 }
 
 .copyright{

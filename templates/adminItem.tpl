@@ -53,7 +53,7 @@
                 <tbody id="itemsTable">
                     {assign var=i value=0}
                     {foreach from=$items item=item}
-                        <tr><td>{$item->titulo}</td><td>${$item->precio}</td><td>{$item->nombre}</td><td>{$item->descripcion}</td>
+                        <tr><td>{$item->titulo}</td><td>${$item->precio}</td><td>{$item->nombre}</td><td class="descripcionTD">{$item->descripcion}</td>
                         <td>{if ($images[$i] != '')} 
                         <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
                         {/if}</td>

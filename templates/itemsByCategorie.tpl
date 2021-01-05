@@ -25,16 +25,16 @@
 
         {foreach from=$items item=item}
             <li class="itemMenu"> 
-            {if ($images[$i] != '')} 
-            <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
-            {/if}
-            <div class="itemInformation">
-                <div class="titleDescription">
-                    <h1>{$item->titulo}</h1>
-                    <p>{$item->descripcion}</p>
-                </div>
+                <div class="itemInformation">
+                    <div class="containerImg">
+                        {if ($images[$i] != '')} 
+                            <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
+                        {/if}
+                        <h1>{$item->titulo}</h1>
+                    </div>
                     <h2>${$item->precio}</h2>
-            </div>
+                </div>
+                    <p>{$item->descripcion}</p>
             </li>
         <!--{$i++}--> 
         {/foreach}
