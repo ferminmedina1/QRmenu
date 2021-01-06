@@ -17,10 +17,10 @@
     
     <!-------------CONTENT----------->
     <article class="content">
-        <div class="containerTitle">
-            <h1 class="principalTitle">{$categoria->nombre}</h1>
-        </div>
         <ul class="menuList">
+        <li class="containerTitle">
+            <h1 class="principalTitle">{$categoria->nombre}</h1>
+        </li>
         {assign var=i value=0}
 
         {foreach from=$items item=item}

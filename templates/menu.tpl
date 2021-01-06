@@ -27,9 +27,9 @@
         {assign var=i value=0}
         {foreach from=$categories item=categorie}
             <ul class="menuList">
-            <div class="containerTitle">
+            <li class="containerTitle">
                 <h1 class="principalTitle">{$categorie->nombre}</h1>
-            </div>
+            </li>
 
             {foreach from=$items item=item}
             {if $categorie->id_categoria eq $item->id_categoria}

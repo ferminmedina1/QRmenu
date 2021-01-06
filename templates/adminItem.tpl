@@ -47,13 +47,18 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Item</th><th>Precio</th><th>Categoria</th><th>Descripcion</th><th>Imagen</th><th>Eliminar</th><th>Editar</th>
+                        <th>Item</th><th>En stock</th><th>Precio</th><th>Categoria</th><th>Descripcion</th><th>Imagen</th><th>Eliminar</th><th>Editar</th>
                     </tr>
                 </thead>
                 <tbody id="itemsTable">
                     {assign var=i value=0}
                     {foreach from=$items item=item}
-                        <tr><td>{$item->titulo}</td><td>${$item->precio}</td><td>{$item->nombre}</td><td class="descripcionTD">{$item->descripcion}</td>
+                        <tr>
+                        <td>{$item->titulo}</td>
+                        <td>{if $item->stock}<button class="stockButton">🟢</button>{else}<button class="stockButton">🔴</button>{/if}</td>
+                        <td>${$item->precio}</td>
+                        <td>{$item->nombre}</td>
+                        <td class="descripcionTD">{$item->descripcion}</td>
                         <td>{if ($images[$i] != '')} 
                         <img class="imgItem" src="data:image/jpg; base64,{$images[$i]}" alt="img">
                         {/if}</td>

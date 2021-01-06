@@ -24,7 +24,7 @@
 
             <form class="formulario" action="admin/addAdmin" method="post">           
                 <div class="inputsPrincipales">
-                <label class="textoInput"> Usuario:  <input type="text" name="user" required></label>
+                <label class="textoInput"> Usuario:  <input type="text" name="user" required pattern="[A-Za-z0-9]+"></label>
                 <label class="textoInput"> E-mail:  <input type="email" name="mail" required></label>
                 <label class="textoInput"> Contraseña:  <input type="password" id="pass" name="pass" required></label>
                 </div>

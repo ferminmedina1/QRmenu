@@ -15,8 +15,8 @@ class menuModel{
     }
 
     function insertItem($nombre,$precio,$categoria,$descripcion, $img){
-        $query = $this->db->prepare('INSERT INTO items(titulo,precio,id_categoria,descripcion,imagen) VALUES (?,?,?,?,?)');
-        $query->execute([$nombre,$precio,$categoria,$descripcion,$img]);
+        $query = $this->db->prepare('INSERT INTO items(titulo,precio,id_categoria,descripcion,imagen,stock) VALUES (?,?,?,?,?,?)');
+        $query->execute([$nombre,$precio,$categoria,$descripcion,$img,1]);
     }
 
     function deleteItem($id) {      
