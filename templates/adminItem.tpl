@@ -55,7 +55,7 @@
                     {foreach from=$items item=item}
                         <tr>
                         <td>{$item->titulo}</td>
-                        <td>{if $item->stock}<button class="stockButton">🟢</button>{else}<button class="stockButton">🔴</button>{/if}</td>
+                        <td>{if $item->stock}<a href="updateStock/{$item->id_item}/{$item->stock}" class="stockButton">🟢</a>{else}<a href="updateStock/{$item->id_item}/{$item->stock}" class="stockButton">🔴</a>{/if}</td>
                         <td>${$item->precio}</td>
                         <td>{$item->nombre}</td>
                         <td class="descripcionTD">{$item->descripcion}</td>

@@ -41,6 +41,9 @@
                             {/if}
                             <h1>{$item->titulo}</h1>
                         </div>
+                        {if $item->stock eq 0}
+                        <h1 class="noStock">SIN STOCK</h1>
+                        {/if}
                         <h2>${$item->precio}</h2>
                     </div>
                         <p>{$item->descripcion}</p>

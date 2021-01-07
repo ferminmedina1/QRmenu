@@ -154,5 +154,23 @@ class menuController{
             header("Location: ".LOGIN);
         } 
     }
+
+    function editarStockItem($params = null){
+
+        $logued = $this->helper->checkUserSession();
+        
+        if ($logued == True){ 
+            $id = $params[':ID'];
+            $stock = $params[':STOCK'];
+            $nuevoStock = 1 - $stock;
+
+            $this->model->updateStockItem($nuevoStock,$id);
+        
+            $this->view->showAdminItemsLocation();  
+        }
+        else{
+            header("Location: ".LOGIN);
+        } 
+    }
 }
 

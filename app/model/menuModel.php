@@ -35,6 +35,11 @@ class menuModel{
         $query = $this->db->prepare("UPDATE items SET titulo=?, precio=?, descripcion=?, imagen=?, id_categoria=? WHERE id_item = ?");
         $query->execute(array($nombre,$precio,$descripcion,$img ,$categoria,$id));
     }
+
+    function updateStockItem($stock,$id){
+        $query = $this->db->prepare("UPDATE items SET stock=? WHERE id_item = ?");
+        $query->execute([$stock,$id]);
+    }
 }
 
 ?>

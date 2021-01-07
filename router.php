@@ -40,6 +40,7 @@
     $r->addRoute("eliminarItem/:ID", "GET", "menuController", "eliminarItem");
     $r->addRoute("editarItem/:ID", "GET", "menuController", "showFormEditarItem");
     $r->addRoute("actualizarItem/:ID", "POST", "menuController", "editarItem");
+    $r->addRoute("updateStock/:ID/:STOCK", "GET", "menuController", "editarStockItem");
 
 
     //ACCION CATEGORIAS
