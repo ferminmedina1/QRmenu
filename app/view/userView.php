@@ -40,5 +40,5 @@ class userView{
     function showAdminUsersLocation(){
         header("Location: ".BASE_URL."admin/users");
     }
-    
+
 }

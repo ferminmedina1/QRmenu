@@ -15,8 +15,10 @@ h1, p{
 /*HEADER*/
 
 header{
-    position: relative;
+    position: fixed;
+    top:0;
     z-index: 1;
+    width: 100%;
     background-color: rgb(26, 26, 26);
     display: flex;
     justify-content: space-between;
@@ -122,6 +124,7 @@ nav {
 .content{
     background-color: rgb(207, 200, 200);
     min-height: 80vh;
+    margin-top:20%;
 }
 /*footer*/
 

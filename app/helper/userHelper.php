@@ -6,10 +6,6 @@ require_once ("./app/model/userModel.php");
 class userHelper{
 
 
-    function __construct() {
-
-    }
-
     function checkUserSession() {
         $this->startSessionFixed();
         if (isset($_SESSION['user'])) {

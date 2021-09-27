@@ -23,10 +23,10 @@
             <form class="formulario" action="agregarItem" method="POST" enctype="multipart/form-data">
 
                 <div class="inputsPrincipales">
-                    <label class="textoInput"> Nombre: <input type="text" REQUIRED name="nombre" id="producto"> </label>
-                    <label class="textoInput"> Precio: <div class="price"><p>$</p><input type="number" REQUIRED name="precio" id="precio"> </div></label>
-                    <label class="textoInput"> Descripcion: <input type="text" name="descripcion" id="descripcion"> </label>
-                    <label class="textoInput"> Imagen: <input type="file" name="file"/></label>
+                    <label class="textoInput"> Nombre: <input class="verify-input" type="text" REQUIRED name="nombre" id="producto"> </label>
+                    <label class="textoInput"> Precio: <div class="price"><p>$</p><input class="verify-input" type="number" REQUIRED name="precio" id="precio"> </div></label>
+                    <label class="textoInput"> Descripcion: <input type="text" class="verify-input" name="descripcion" id="descripcion"> </label>
+                    <label class="textoInput"> Imagen: <input class="verify-input" type="file" name="file"/></label>
                 </div>
             
                 <div class="textoInput">
@@ -73,6 +73,7 @@
     <!-------------F0OTER----------->
     {include file="footer.tpl"}
 
+    <script src="././js/inputVerifier.js"></script>
     <script src="././js/nav.js"></script>
 </body>
 </html>

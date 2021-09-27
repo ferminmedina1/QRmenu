@@ -29,6 +29,8 @@
 
         <a href='admin/categorias' class="option"> CATEGORIAS </a>
 
+        <a href='admin/tienda' class="option"> TIENDA </a>
+
         <a href='home' class="option2"> VOLVER AL MENU</a>
 
         <a href='logout' class="option3"> CERRAR SESIÓN </a>

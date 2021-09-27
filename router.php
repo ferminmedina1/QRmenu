@@ -1,6 +1,7 @@
 <?php
 
     require_once("app/controller/menuController.php");
+    require_once("app/controller/shopController.php");
     require_once("app/controller/categoriasController.php");
     require_once("app/controller/userController.php");
     require_once("routerClass.php");
@@ -21,6 +22,7 @@
     $r->addRoute("admin", "GET", "menuController", "Admin");
     $r->addRoute("admin/users", "GET", "userController", "AdminUsers");
     $r->addRoute("admin/items", "GET", "menuController", "AdminItems");
+    $r->addRoute("admin/tienda", "GET", "shopController", "AdminShop");
     $r->addRoute("admin/categorias", "GET", "categoriasController", "AdminCategorias");
     $r->addRoute("admin/register", "GET", "userController", "goToRegister");
 
